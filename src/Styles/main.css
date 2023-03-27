@@ -1,4 +1,6 @@
-.section {}
+.section {
+  flex: 1 1 auto;
+}
 
 .section-1 {
   padding: 164px 80px 136px 70px;
@@ -45,6 +47,7 @@
 
 .sign_up {
   background: #FFFFFF;
+  margin-right: 25px;
 }
 
 .sign_in {
@@ -123,12 +126,23 @@
   padding: 80px 70px 0px 70px;
 }
 
+.my-accordion {
+  background: rgba(255, 255, 255, 0.54) !important;
+}
+
 .accordion {
   width: 750px;
+  background: rgba(255, 255, 255, 0.54) !important;
+  border-radius: 16px;
+
+}
+.accordion-item {
+  background: rgba(255, 255, 255, 0.54) !important;
 }
 :root {
   --bs-body-bg: rgba(255, 255, 255, 0.34);
   --bs-border-radius: 16px;
+  --bs-accordion-bg: rgba(255, 255, 255, 0.54);
 }
 
 .accordion-button {

@@ -12,7 +12,7 @@ import '../Styles/navbar.css';
 function App() {
   return (
     <div className="navbar-menu">
-      {['lg'].map((expand) => (
+      {['xl'].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">
@@ -73,6 +73,7 @@ function App() {
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="#action1">Eng</NavDropdown.Item>
+                    <NavDropdown.Divider />
                     <NavDropdown.Item href="#action2">
                       Polish
                     </NavDropdown.Item>

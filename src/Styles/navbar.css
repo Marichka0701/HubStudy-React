@@ -4,6 +4,7 @@
   
   position: fixed;
   border-radius: 16px;
+  z-index: 1000;
   /* max-height: 72px; */
 }
 
@@ -48,7 +49,7 @@
     margin-right: 44px;
     font-size: 18px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .button-nav {
     background-color: #FFE146;
   }
@@ -59,5 +60,14 @@
     justify-content: center;
 
     flex-grow: 0;
+    overflow: visible;
   }
+}
+@media screen and (min-width: 992px) {
+  .offcanvas-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
