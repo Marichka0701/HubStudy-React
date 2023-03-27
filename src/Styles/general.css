@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
+
+
+.wrapper {
+  background: url('../img/background.png');
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat;
+
+  height: 7036px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  font-size: 24px;
+}
