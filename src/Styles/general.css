@@ -5,11 +5,17 @@ a {
   color: black;
 }
 
-.wrapper {
+body {
   background: url('../img/background.png');
-  background-size: contain;
+  background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
+}
+.wrapper {
+  /* background: url('../img/background.png');
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat; */
 
   /* min-height: 100%; */
   height: 7036px;
@@ -24,12 +30,18 @@ a {
   flex-direction: column;
 }
 
+@media screen and (max-width: 420px) {
+  body {
+    background: aqua;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     /* background-size: contain; */
     background-size: cover;
     /* background-size: contain; */
-    background-position: top left;
+    background-position: center center;
   }
 }
 
