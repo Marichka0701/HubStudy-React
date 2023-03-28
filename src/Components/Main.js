@@ -6,6 +6,8 @@ import itemFour from '../img/benefits-item-4.png';
 import itemFive from '../img/benefits-item-5.png';
 import itemSix from '../img/benefits-item-6.png';
 import photo from '../img/section-5.png';
+import mainPhoto from '../img/photo-main.png';
+import reviewItemOne from '../img/reviews-1.png'
 import Accordion from 'react-bootstrap/Accordion';
 
 const section = () => {
@@ -24,10 +26,9 @@ const section = () => {
             <button className="sign_in  button">Стати наставником</button>
           </div>
         </div>
-      {/* <!-- <div className="images">
-        <img src="./images/image-main-1.png" alt="" />
-        <img src="./images/image-main-2.png" alt="" />
-      </div> --> */}
+       <div className="images">
+        <img width={500} height={500} src= {mainPhoto} alt="" />
+      </div> 
       </div>
       <div className="section-2">
         <h2 className="title-section-2">Our benefits:</h2>
@@ -170,9 +171,85 @@ const section = () => {
           aliquip ex ea commodo consequat. 
         </Accordion.Body>
       </Accordion.Item>
+      <Accordion.Item eventKey="7">
+        <Accordion.Header>Accordion Item #8</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. 
+        </Accordion.Body>
+      </Accordion.Item>
     </Accordion>
           <div>
             <img src={photo} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className='reviews'>
+        <h2 className='title-reviews'>
+          <span className='black-reviews'>Re</span>views
+        </h2>
+        <div className='block-reviews'>
+          <div className='review-item'>
+            <div className='image-review'>
+              <img src= {reviewItemOne} alt="" ></img>
+            </div>
+            <div className='text-review'>
+              <div className='log-review'>
+                <h3 className='log-review-item'>
+                Andrew
+                </h3>
+              </div>
+              <div className='description-review'>
+                <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+              </div>
+            </div>
+          </div>
+          <div className='review-item'>
+            <div className='image-review'>
+              <img src= {reviewItemOne} alt="" ></img>
+            </div>
+            <div className='text-review'>
+              <div className='log-review'>
+                <h3 className='log-review-item'>
+                Andrew
+                </h3>
+              </div>
+              <div className='description-review'>
+                <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+              </div>
+            </div>
+          </div>
+          <div className='review-item'>
+            <div className='image-review'>
+              <img src= {reviewItemOne} alt="" ></img>
+            </div>
+            <div className='text-review'>
+              <div className='log-review'>
+                <h3 className='log-review-item'>
+                Andrew
+                </h3>
+              </div>
+              <div className='description-review'>
+                <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+              </div>
+            </div>
+          </div>
+          <div className='review-item'>
+            <div className='image-review'>
+              <img src= {reviewItemOne} alt="" ></img>
+            </div>
+            <div className='text-review'>
+              <div className='log-review'>
+                <h3 className='log-review-item'>
+                Andrew
+                </h3>
+              </div>
+              <div className='description-review'>
+                <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
