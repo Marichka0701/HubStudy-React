@@ -7,7 +7,10 @@ import itemFive from '../img/benefits-item-5.png';
 import itemSix from '../img/benefits-item-6.png';
 import photo from '../img/section-5.png';
 import mainPhoto from '../img/photo-main.png';
-import reviewItemOne from '../img/reviews-1.png'
+import reviewItemOne from '../img/reviews-1.png';
+import sectionThree from '../img/section-3.png';
+import sectionFour from '../img/section-4.png';
+import rates from '../img/Stars_rate.png';
 import Accordion from 'react-bootstrap/Accordion';
 
 const section = () => {
@@ -103,6 +106,47 @@ const section = () => {
       <div className="section-3">
         <h2 className="title-section-3">
           <span className="white-title-section-3">Find</span> your instructor</h2> 
+          <p className='paragraph-section-3'>Our best instructors:</p>
+          <div className='content-section-3'>
+            <div className='titleAndImage'>
+              <div className='description-section-3'>
+                <h2 className='description-title-section-3'>Programing:</h2>
+              </div>
+              <div className='image-section-3'>
+                <img src={sectionThree} alt=''></img>
+              </div>
+            </div>
+            <div className='info-about-tutor'>
+              <p className='name-tutor'>Carl Smith</p>
+              <ul className='theses'>
+                <li className='theses-item'>
+                senior at the Softserve IT - company
+                </li>
+                <li className='theses-item'>
+                C# and C++ developer
+                </li>
+                <li className='theses-item'>
+                international students group
+                </li>
+              </ul>
+              <img src={rates} alt=''></img>
+              <div className='buttons-section-3'>
+                <button className='startStudying'>Почати навчання</button>
+                <button className='about'>Детальніше</button>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div className='section-4'>
+        <h2 className='title-section-4'>
+        Didn`t find an instruct<span className='white-title-section-4'>or?</span>
+        </h2>
+        <p className='paragraph-1-section-4'>Become one!</p>
+        <p className='paragraph-2-section-4'>Fill the blank, create personal account and become a part of our community! Share your knowledge with others! Meet grateful students and blah-blah-blah</p>
+        <button className='becomeInstructor'>
+        Become an instructor!
+        </button>
+        <img src={sectionFour} alt='' ></img>
       </div>
       <div className='section-5'>
         <h2 className="title-section-5">Often - asked questions:</h2>

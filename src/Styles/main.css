@@ -101,12 +101,164 @@
   color: #292929;
   margin-left: 100px;
 
-  margin-bottom: 1772px;
+  margin-bottom: 17px;
 }
 
 .white-title-section-3 {
   color: white;
 }
+
+.paragraph-section-3 {
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  color: #6D6D6D;
+  margin-bottom: 11px;
+}
+
+.content-section-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  max-width: 966px;
+  padding: 40px 70px 40px 96px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  margin: 0px 0px 136px 70px;
+}
+
+.titleAndImage {
+  display: flex;
+  flex-direction: column;
+}
+
+.description-title-section-3 {
+  font-size: 56px;
+  line-height: 64px;
+  color: #160033;
+  margin-bottom: 31px;
+}
+
+.name-tutor {
+  font-size: 28px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.theses {
+  margin-bottom: 17px;
+}
+
+.theses-item {
+  font-size: 24px;
+  line-height: 28px;
+  color: #6D6D6D;
+}
+
+li {
+  position: relative;
+  padding: 5px 15px;
+}
+
+li:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6D6D6D;
+  ;
+  bottom: 13px;
+  left: 0px;
+  position: absolute;
+}
+
+.buttons-section-3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 17px;
+}
+
+.startStudying {
+  width: 211px;
+  height: 49px;
+  background: #FFFFFF;
+  border-radius: 1000px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin-right: 38px;
+}
+
+.about {
+  width: 211px;
+  height: 49px;
+  border-radius: 1000px;
+  border: 2px solid #FFFFFF;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+
+
+/* section-4 */
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 164px;
+}
+
+.title-section-4 {
+  text-align: center;
+  font-size: 64px;
+  line-height: 74px;
+  color: #000000;
+  padding-right: 45px;
+}
+
+.white-title-section-4 {
+  color: #FFFFFF;
+}
+
+.paragraph-1-section-4 {
+  text-align: center;
+  font-size: 28px;
+  line-height: 32px;
+  color: #160033;
+  margin-bottom: 32px;
+}
+
+.paragraph-2-section-4 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  max-width: 825px;
+  margin-bottom: 40px;
+  color: #6D6D6D;
+}
+
+.becomeInstructor {
+  width: 236px;
+  height: 48px;
+  background: #FFE146;
+  border-radius: 1000px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+
+
 
 
 /* section-5 */
@@ -164,6 +316,7 @@
 .reviews {
   /* padding: 0px 230px 136px 160px; */
 }
+
 .title-reviews {
   margin: 217px 60px 80px 0px;
   text-align: center;
@@ -175,6 +328,7 @@
 .black-reviews {
   color: black;
 }
+
 .block-reviews {
   display: flex;
   flex-direction: row;
@@ -182,16 +336,19 @@
 
   padding: 0px 190px 0px 190px;
 }
+
 .review-item {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   max-width: 480px;
+  height: 364px;
   background: rgba(195, 199, 255, 0.3);
   border-radius: 16px;
   margin: 0px 42px 35px 0px;
 }
+
 /* .review-item:nth-child(1) {
   margin: 0px 42px 35px 0px;
 } */
@@ -199,15 +356,18 @@
   padding-left: 36px;
   padding-right: 24px;
 }
+
 .text-review {
   display: flex;
   flex-direction: column;
 }
+
 .log-review-item {
   font-size: 36px;
   line-height: 41px;
   color: #000000;
 }
+
 .description-review {
   font-size: 24px;
   line-height: 28px;
