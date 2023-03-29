@@ -30,7 +30,7 @@ const section = () => {
           </div>
         </div>
        <div className="images">
-        <img width={500} height={500} src= {mainPhoto} alt="" />
+        <img className='imageSection-1' src= {mainPhoto} alt="" />
       </div> 
       </div>
       <div className="section-2">
@@ -146,7 +146,7 @@ const section = () => {
         <button className='becomeInstructor'>
         Become an instructor!
         </button>
-        <img src={sectionFour} alt='' ></img>
+        <img className='image-section-4' src={sectionFour} alt='' ></img>
       </div>
       <div className='section-5'>
         <h2 className="title-section-5">Often - asked questions:</h2>
@@ -225,8 +225,8 @@ const section = () => {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
-          <div>
-            <img src={photo} alt="" />
+          <div >
+            <img className='image-section-5'src={photo} alt="" />
           </div>
         </div>
       </div>

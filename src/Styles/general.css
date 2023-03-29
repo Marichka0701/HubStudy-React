@@ -31,19 +31,23 @@ a {
 }
 
 @media screen and (max-width: 420px) {
+  .wrapper {
+    background: rgb(255, 129, 38);
+    height: 7036px;
+  }
   body {
-    background: aqua;
+    background: rgb(255, 129, 38);
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .wrapper {
-    /* background-size: contain; */
+    
     background-size: cover;
-    /* background-size: contain; */
+   
     background-position: center center;
   }
-}
+} */
 
 html, body {
   width: 100%;
@@ -52,6 +56,6 @@ html, body {
 
 @media screen and (max-width: 768px) {
   html {
-    width: 740px;
+    width: 800px;
   }
 }
