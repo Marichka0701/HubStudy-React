@@ -1,18 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import Nav from './Components/Nav.js';
+import HomePage from './scenes/HomePage';
+import Footer from './scenes/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import './Styles/reset.css';
-import './Styles/general.css';
-import Main from './Components/Main.js';
-import Footer from './Components/Footer';
+import "./Styles/general.css";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Nav />
-      <Main></Main>
-      <Footer></Footer>
+    <div className="App">
+     <HomePage />
+     <Footer />
     </div>
   );
 }

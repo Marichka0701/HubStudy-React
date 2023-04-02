@@ -5,12 +5,12 @@ a {
   color: black;
 }
 
-/* body {
+body {
   background: url('../img/background.png');
   background-size: cover;
   background-position: top left;
   background-repeat: no-repeat;
-} */
+}
 .wrapper {
   background: url('../img/background.png');
   background-size: contain;
@@ -42,9 +42,9 @@ a {
 
 /* @media screen and (max-width: 768px) {
   .wrapper {
-    
+
     background-size: cover;
-   
+
     background-position: center center;
   }
 } */
@@ -56,6 +56,6 @@ html, body {
 
 @media screen and (max-width: 768px) {
   html {
-    width:850px;
+    width: 800px;
   }
 }

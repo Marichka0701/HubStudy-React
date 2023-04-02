@@ -1,7 +1,7 @@
 .navbar-menu {
   width: 100%;
   max-width: 1440px;
-  
+
   position: fixed;
   border-radius: 16px;
   z-index: 1000;
@@ -69,5 +69,5 @@
     justify-content: center;
     align-items: center;
   }
-  
+
 }

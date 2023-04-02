@@ -1,6 +1,7 @@
 import FooterStyle from '../Styles/footer.css';
+import "../Styles/footer.css"
 const Footer = () => {
-  return ( 
+  return (
     <footer class="footer">
       <div className="contact-info">
         <div className="block">
@@ -79,5 +80,5 @@ const Footer = () => {
     </footer>
    );
 }
- 
+
 export default Footer;
