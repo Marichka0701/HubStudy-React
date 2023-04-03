@@ -30,7 +30,6 @@
   padding: 40px 70px 40px 96px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  /* margin: 0px 0px 136px 70px; */
   margin: 0 auto;
 }
 
@@ -89,7 +88,7 @@
 .startStudying {
   width: 211px;
   height: 49px;
-  background: #ffbe64;
+  background: #ffffff;
   border-radius: 1000px;
   font-weight: 400;
   font-size: 18px;
@@ -101,7 +100,7 @@
   width: 211px;
   height: 49px;
   border-radius: 1000px;
-  border: 2px solid #725c3d;
+  border: 2px solid white;
   background: rgba(255, 255, 255, 0.2);
   padding: 12px 24px;
   font-weight: 400;
@@ -127,9 +126,7 @@
     color: rgb(75, 75, 75);
   }
   .content-section-3 {
-    /* background: #ffffffb0; */
     background-color: rgba(255, 255, 255, 0.916);
-    /* box-shadow: 0px 0px 20px 10px #0000007d;  */
   }
   .section-3 {
     background: #ffffffb0;
@@ -139,5 +136,11 @@
   }
   .title-section-3 { 
    padding-top: 20px;
+  }
+  .about {
+  border: 2px solid #725c3d;
+  }
+  .startStudying {
+  background: #ffbe64;
   }
 }

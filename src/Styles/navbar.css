@@ -5,7 +5,6 @@
   position: fixed;
   border-radius: 16px;
   z-index: 1000;
-  /* max-height: 72px; */
 }
 
 .nav-link,
@@ -13,23 +12,10 @@
   color: #000000 !important;
 }
 
-/* .navbar-nav  {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .nav-item {
   margin-right: 44px;
   font-size: 18px;
 }
-
-/* .fade, .offcanvas-backdrop, .show {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
 
 .bg-light {
   margin: 16px 18px 0px 14px;

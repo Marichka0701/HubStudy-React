@@ -17,14 +17,10 @@
 }
 
 .my-accordion {
-  /* background: rgba(255, 255, 255, 0.54) !important; */
-  /* border-radius: 16px; */
-  /* border-radius: 24px !important; */
 }
 
 .accordion {
   width: 750px;
-  /* background: rgba(255, 255, 255, 0.54) !important; */
   border-radius: 24px;
 
 }
@@ -34,9 +30,7 @@
 }
 
 :root {
-  /* --bs-body-bg: rgba(255, 255, 255, 0.34); */
   --bs-border-radius: 24px;
-  /* --bs-accordion-bg: rgba(255, 255, 255, 0.54); */
 }
 
 .accordion-button {
@@ -60,8 +54,7 @@
     width: 320px;
   }
   .section-5 {
-    /* background: #ffd3b1; */
-    background-color: rgba(163, 195, 255, 0.916);
+    background: #ffffffb0;
     box-shadow: 0px 0px 20px 10px #0000007d; 
     border-radius: 24px;
 

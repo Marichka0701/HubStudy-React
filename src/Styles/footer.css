@@ -138,4 +138,9 @@ label {
   .social-net {
     margin: 20px;
   }
+  .footer {
+    margin-top: 100px;
+    background: #7d7d7d;
+    border-top-right-radius: 150px;
+  }
 }

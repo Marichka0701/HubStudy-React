@@ -17,7 +17,6 @@ function App() {
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">
-              {/* <img src={logo}></img> */}
               <picture>
                 <source srcSet={logoMobile} media="(max-width: 420px)" />
                 <source srcSet={logo} media="(min-width: 421px)" />
@@ -63,16 +62,6 @@ function App() {
                   <Nav.Link className='nav-item' href="#action7">Блог</Nav.Link>
                   <Nav.Link className='nav-item' href="#action8">Увійти</Nav.Link>
                 </Nav>
-                {/* <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form> */
-                }
                 <button className='button-nav'>Зареєструватись</button>
                 <NavDropdown
                     title="Укр"

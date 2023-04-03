@@ -20,7 +20,6 @@ const SectionTwo = () => {
       <div className="benefits">
         <div className="benefit-item">
           <div className="benefit-image">
-            {/* <img src= {itemOne} alt="" /> */}
             <picture>
               <source srcSet={itemMobOne} media="(max-width: 420px)" />
               <source srcSet={itemOne} media="(min-width: 421px)" />
@@ -36,7 +35,6 @@ const SectionTwo = () => {
         </div>
         <div className="benefit-item">
           <div className="benefit-image">
-            {/* <img src={itemTwo} alt="" /> */}
             <picture>
               <source srcSet={itemMobTwo} media="(max-width: 420px)" />
               <source srcSet={itemTwo} media="(min-width: 421px)" />
@@ -52,7 +50,6 @@ const SectionTwo = () => {
         </div>
         <div className="benefit-item">
           <div className="benefit-image">
-            {/* <img src={itemThree} alt="" /> */}
             <picture>
               <source srcSet={itemMobThree} media="(max-width: 420px)" />
               <source srcSet={itemThree} media="(min-width: 421px)" />
@@ -67,7 +64,6 @@ const SectionTwo = () => {
         </div>
         <div className="benefit-item">
           <div className="benefit-image">
-            {/* <img src={itemFour} alt="" /> */}
             <picture>
               <source srcSet={itemMobFour} media="(max-width: 420px)" />
               <source srcSet={itemFour} media="(min-width: 421px)" />
@@ -83,7 +79,6 @@ const SectionTwo = () => {
         </div>
         <div className="benefit-item">
           <div className="benefit-image">
-            {/* <img src={itemFive} alt="" /> */}
             <picture>
               <source srcSet={itemMobFive} media="(max-width: 420px)" />
               <source srcSet={itemFive} media="(min-width: 421px)" />
@@ -99,7 +94,6 @@ const SectionTwo = () => {
         </div>
         <div className="benefit-item">
           <div className="benefit-image">
-            {/* <img src={itemSix} alt="" /> */}
             <picture>
               <source srcSet={itemMobSix} media="(max-width: 420px)" />
               <source srcSet={itemSix} media="(min-width: 421px)" />
@@ -108,8 +102,8 @@ const SectionTwo = () => {
           </div>
           <div className="benefit-paragraph">
             <p>
-              Гнучкий графік:
-              обирайте час та займайтесь тоді, коли вам буде зручно
+              Легкий та зручний пошук:
+              тут ви швидко знайдете потрібного наставника використовуючи різні фільтри
             </p>
           </div>
         </div>

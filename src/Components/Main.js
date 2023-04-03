@@ -6,6 +6,7 @@ import SectionTwo from './Section-2';
 import GetMentors from './getMentors';
 import SectionFour from './Section-4';
 import SectionFive from './Section-5';
+import WriteUs from './writeToUs';
 
 const section = () => {
   return ( 
@@ -16,6 +17,7 @@ const section = () => {
       <SectionFour></SectionFour>
       <SectionFive></SectionFive>
       <Reviews></Reviews>
+      <WriteUs></WriteUs>
     </main>
    );
 }
