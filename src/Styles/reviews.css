@@ -60,6 +60,13 @@
 }
 
 @media screen and (max-width: 420px) {
+  .reviews {
+    /* background: #FFC296; */
+    background: #ffffffb0;
+    box-shadow: 0px 0px 20px 10px #0000007d; 
+    border-radius: 24px;
+    margin: 0 40px;
+  }
   .block-reviews {
     justify-content: center;
     align-items: center;
@@ -67,6 +74,8 @@
   .review-item {
     max-width: 500px;
     margin: 0 0 40px 0;
+    background-color: rgba(163, 195, 255, 0.916);
+    box-shadow: 0px 0px 20px 10px #0000007d; 
   }
   .text-review {
     width: 350px;

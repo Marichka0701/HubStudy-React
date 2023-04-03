@@ -69,5 +69,21 @@
     justify-content: center;
     align-items: center;
   }
-  
+}
+
+@media screen and (max-width: 420px) {
+  .bg-light {
+    background-color: rgba(255, 255, 255, 0.644) !important;
+  }
+  .container-fluid {
+    position: relative;
+    height: 72px;
+  }
+  .navbar-brand img {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    width: 100px;
+    height: 70px;
+  }
 }

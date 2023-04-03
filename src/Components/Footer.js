@@ -1,23 +1,29 @@
-import FooterStyle from '../Styles/footer.css';
+import '../Styles/footer.css';
+
+import instagram from '../img/instagram.png';
+import facebook from '../img/facebook.png';
+import telegram from '../img/telegram.png';
+
+
 const Footer = () => {
   return ( 
-    <footer class="footer">
+    <footer className="footer">
       <div className="contact-info">
         <div className="block">
-          <h3>Про HubStudy:</h3>
+          <h3 className='block-heading'>Про HubStudy:</h3>
             <ul>
-              <li><a href="">Про нас</a></li>
-              <li><a href="">Відгуки</a></li>
-              <li><a href="">Співпраця</a></li>
-              <li><a href="">Контакти</a></li>
+              <li><a className='link-page' href="">Про нас</a></li>
+              <li><a className='link-page' href="">Відгуки</a></li>
+              <li><a className='link-page' href="">Співпраця</a></li>
+              <li><a className='link-page' href="">Контакти</a></li>
             </ul>
         </div>
         <div className="block">
-          <h3>Про HubStudy:</h3>
+          <h3 className='block-heading'>Про HubStudy:</h3>
           <ul>
-            <li><a href="">Про нас</a></li>
-            <li><a href="">Відгуки</a></li>
-            <li><a href="">Співпраця</a></li>
+            <li><a className='link-page' href="">Про нас</a></li>
+            <li><a className='link-page' href="">Відгуки</a></li>
+            <li><a className='link-page' href="">Співпраця</a></li>
           </ul>
         </div>
       </div>
@@ -26,7 +32,7 @@ const Footer = () => {
             <h2 className="title-social">Ми в соцмережах: </h2>
           <div className="item-social">
             <div className="image-item">
-              <img src="./images/insta.png" alt="" />
+              <img src={instagram} alt="logo-insta" />
             </div>
             <div className="link">
               <a className='link-social' href="https://msng.link/o/?HubStudy=ig">Instagram</a>
@@ -34,7 +40,7 @@ const Footer = () => {
           </div>
           <div className="item-social">
             <div className="image-item">
-              <img src="./images/facebook (2).png" alt="" />
+              <img src= {facebook} alt="facebook-logo" />
             </div>
             <div className="link">
               <a className='link-social' href="https://www.facebook.com/HubStudy">Facebook</a>
@@ -42,7 +48,7 @@ const Footer = () => {
           </div>
           <div className="item-social">
             <div className="image-item">
-              <img src="./images/telegram (2).png" alt=""/>
+              <img src= {telegram} alt="telegram-logo"/>
             </div>
             <div className="link">
               <a className='link-social' href="https://msng.link/o/?HubStudy=tg">Telegram</a>
@@ -62,7 +68,7 @@ const Footer = () => {
             </div>
             <div className="item">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="fakeEmail@gmail.com" />
+              <input type="email" name="email" id="email" placeholder="johnsonyuk83@gmail.com" />
             </div>
             <div className="item">
               <label for="number">Телефон</label>

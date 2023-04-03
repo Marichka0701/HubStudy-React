@@ -7,6 +7,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { Offcanvas } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../img/logo.svg';
+import logoMobile from '../img/logo-mob.png';
 import '../Styles/navbar.css';
 
 function App() {
@@ -16,7 +17,12 @@ function App() {
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">
-              <img src={logo}></img>
+              {/* <img src={logo}></img> */}
+              <picture>
+                <source srcSet={logoMobile} media="(max-width: 420px)" />
+                <source srcSet={logo} media="(min-width: 421px)" />
+                <img src={logo} alt="" />
+            </picture>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas

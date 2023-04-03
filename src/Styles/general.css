@@ -1,9 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 @import 'reset.css';
 
-a {
-  color: black;
-}
 
 /* body {
   background: url('../img/background.png');
@@ -32,11 +29,19 @@ a {
 
 @media screen and (max-width: 420px) {
   .wrapper {
-    background: rgb(255, 129, 38);
-    height: 7036px;
+    /* background: rgb(255, 129, 38); */
+    /* background: rgb(255, 139, 55); */
+    background: rgb(255, 155, 83);
+    background: rgb(255, 138, 48);
+    
+
+    /* height: 7036px; */
   }
   body {
-    background: rgb(255, 129, 38);
+    /* background: rgb(255, 129, 38); */
+    /* background: #FFC296; */
+    /* background: rgb(255, 139, 55); */
+    background: rgb(255, 138, 48);
   }
 }
 

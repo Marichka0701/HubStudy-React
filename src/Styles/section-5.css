@@ -59,4 +59,13 @@
   .image-section-5 {
     width: 320px;
   }
+  .section-5 {
+    /* background: #ffd3b1; */
+    background-color: rgba(163, 195, 255, 0.916);
+    box-shadow: 0px 0px 20px 10px #0000007d; 
+    border-radius: 24px;
+
+    margin: 80px 40px 0px 40px;
+    padding: 30px 10px; 
+  }
 }

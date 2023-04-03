@@ -1,4 +1,6 @@
 /* section-2 */
+
+
 .title-section-2 {
   font-size: 64px;
   line-height: 74px;
@@ -38,10 +40,20 @@
     align-items: center;
   }
   .section-2 {
-    background: #FFC296;
+    /* background: #FFC296; */
+    /* background: #ffffff; */
+    /* background: #ffd3b1; cсправжній */
+    /* box-shadow: 0px 0px 10px 10px #0000007a;  */
+    /* box-shadow: 0px 0px 20px 10px #0000007d; справжній  */
+    background: #ffe8c1;
     border-radius: 24px;
+    margin: 0 40px;
   }
   .benefit-item {
-    background: #FFEBDC;
+    /* background: #FFEBDC; */
+    background-color: hwb(0 100% 0%);
+  }
+  .title-section-2 {
+    padding-top: 25px;
   }
 }
