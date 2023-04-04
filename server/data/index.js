@@ -82,5 +82,25 @@ export const review = [
         firstName: "Annika",
         lastName: "Lind",
         text: "Just text"
-    }
+    },
+    {
+        firstName: "Jan",
+        lastName: "Falk",
+        text: "Våvinde. E-demokrati. Sudoku. Den nya ekonomin. Monoligt. Sust. "
+    },
+    {
+        firstName: "Jan",
+        lastName: "Falk",
+        text: "Våvinde. E-demokrati. Sudoku. Den nya ekonomin. Monoligt. Sust. "
+    },
+    {
+        firstName: "Jan",
+        lastName: "Falk",
+        text: "Våvinde. E-demokrati. Sudoku. Den nya ekonomin. Monoligt. Sust. "
+    },
+    {
+        firstName: "Jan",
+        lastName: "Falk",
+        text: "Våvinde. E-demokrati. Sudoku. Den nya ekonomin. Monoligt. Sust. "
+    },
 ]

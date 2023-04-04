@@ -9,7 +9,6 @@ const ReviewsGet = ({isProfile = false}) => {
     const getReviews = async () => {
         const response = await fetch("http://localhost:3001/review",{
             method: "GET"
-
         });
         const data = await response.json();
         dispatch(setReviews({ review: data }));
@@ -19,7 +18,7 @@ const ReviewsGet = ({isProfile = false}) => {
         getReviews()
     }, [])
 
-    getReviews();
+    //getReviews();
 
     return (
         <>
