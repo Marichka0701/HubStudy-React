@@ -9,7 +9,6 @@ const MentorsGet = ({isProfile = false}) => {
     const getMentors = async () => {
         const response = await fetch("http://localhost:3001/mentor",{
             method: "GET"
-
         });
         const data = await response.json();
         dispatch(setMentors({ mentor: data }));
@@ -19,7 +18,7 @@ const MentorsGet = ({isProfile = false}) => {
         getMentors()
     }, [])
 
-    getMentors();
+    //getMentors();
 
     return (
         <>

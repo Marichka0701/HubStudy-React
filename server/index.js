@@ -8,8 +8,10 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
-import mentorRoutes from "./routes/mentor.js"
-import reviewRoutes from "./routes/review.js"
+import mentorRoutes from "./routes/mentor.js";
+import reviewRoutes from "./routes/review.js";
+import userQuestionRoutes from "./routes/userquestion.js";
+import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
 import Review from "./models/Review.js";
 import { mentor } from "./data/index.js";
@@ -33,6 +35,7 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 app.use("/mentor", mentorRoutes);
 app.use("/review", reviewRoutes);
+app.use("/userquestion", userQuestionRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

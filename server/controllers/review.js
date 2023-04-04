@@ -9,4 +9,3 @@ export const getAllReviews = async (req, res) => {
     }
 }
 
-export default getAllReviews;
