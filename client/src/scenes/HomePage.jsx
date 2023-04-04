@@ -1,4 +1,5 @@
 import MentorsGet from './MentorsGet';
+import MentorGet from './MentorGet';
 import ReviewsGet from './ReviewsGet';
 import itemOne from '../img/benefits-item-1.png';
 import itemTwo from '../img/benefits-item-2.png';
@@ -13,6 +14,8 @@ import sectionThree from '../img/section-3.png';
 import sectionFour from '../img/section-4.png';
 import rates from '../img/Stars_rate.png';
 import Accordion from 'react-bootstrap/Accordion';
+import Carousel from 'react-bootstrap/Carousel';
+
 import "../Styles/main.css"
 const HomePage = () => {
 
@@ -110,8 +113,8 @@ const HomePage = () => {
         <h2 className="title-section-3">
           <span className="white-title-section-3">Find</span> your instructor</h2>
           <p className='paragraph-section-3'>Our best instructors:</p>
-          <MentorsGet />
-      </div>
+            <MentorsGet />
+    </div>
       <div className='section-4'>
         <h2 className='title-section-4'>
         Didn`t find an instruct<span className='white-title-section-4'>or?</span>

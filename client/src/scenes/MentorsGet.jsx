@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setMentors } from "../state/index.js";
+import Carousel from 'react-bootstrap/Carousel';
 import MentorGet from "./MentorGet.jsx";
 const MentorsGet = ({isProfile = false}) => {
     const dispatch = useDispatch();
@@ -21,18 +22,20 @@ const MentorsGet = ({isProfile = false}) => {
     //getMentors();
 
     return (
-        <>
+        <Carousel>
             {mentor.map(
                 ({
                     firstName,
                     lastName,
                     description
                 }) => (
-                    <MentorGet name={`${firstName} ${lastName}`}
-                                description={description}/>
+                    <Carousel.Item>
+                        <MentorGet name={`${firstName} ${lastName}`}
+                                    description={description}/>
+                                    </Carousel.Item>
                 )
             )}
-        </>
+        </Carousel>
     )
 }
 
