@@ -1,5 +1,6 @@
 import reviewItemOne from '../img/reviews-1.png';
 import "../Styles/main.css"
+import "../Styles/reviews.css"
 
 
 const ReviewGet = ({name, text}) => {
