@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setReviews } from "../state/index.js";
 import ReviewGet from "./ReviewGet.jsx";
+import "../Styles/reviews.css"
 const ReviewsGet = ({isProfile = false}) => {
     const dispatch = useDispatch();
     const review = useSelector((state) => state.review);
@@ -21,7 +22,11 @@ const ReviewsGet = ({isProfile = false}) => {
     //getReviews();
 
     return (
-        <>
+        <div className='reviews'>
+        <h2 className='title-reviews'>
+            <span className='black-reviews'>Re</span>views
+        </h2>
+        <div className='block-reviews'>
             {review.map(
                 ({
                     firstName,
@@ -32,7 +37,8 @@ const ReviewsGet = ({isProfile = false}) => {
                                text={text} />
                 )
             )}
-        </>
+            </div>
+        </div>
     )
 }
 

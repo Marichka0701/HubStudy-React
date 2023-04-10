@@ -3,15 +3,8 @@ import FooterStyle from '../Styles/footer.css';
 import "../Styles/footer.css"
 import { Formik } from "formik";
 import * as yup from "yup";
-
-
-const userQuestionSchema = yup.object().shape({
-  firstName: yup.string().required("required"),
-  lastName: yup.string().required("required"),
-  phoneNumber: yup.string().required("required"),
-  email: yup.string().email("invalid email").required("required"),
-  text: yup.string().required("reqiured")
-});
+import { useState } from 'react';
+import axios from "axios";
 
 const initialValues = {
   firstName: "",
@@ -22,28 +15,32 @@ const initialValues = {
 }
 
 const Footer = () => {
+  const [formData, updateFormData] = useState(initialValues);
 
-  const createUserQuestion = async (values, onSubmitProps) => {
-    // this allows us to send form info with image
-    const formData = new FormData();
-    for (let value in values) {
-      formData.append(value, values[value]);
-    }
+  const handleChange = (e) => {
+    updateFormData({
+      ...formData,
 
-    const savedUserResponse = await fetch(
-      "http://localhost:3001/userquestion/",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
-    onSubmitProps.resetForm();
-};
-
-
-  const handlerFormSubmit = async (values, onSubmitProps) => {
-    await createUserQuestion(values, onSubmitProps);
+      // Trimming any whitespace
+      [e.target.name]: e.target.value.trim()
+    });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(formData);
+
+    const userResponse = await axios.post('http://localhost:3001/userquestion', formData)
+    .then(function (response) {
+      console.log(response);
+      console.log(formData);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    console.log(formData);
+  };
+
 
   return (
     <footer class="footer">
@@ -94,44 +91,32 @@ const Footer = () => {
             </div>
           </div>
         </div>
-          <Formik onSubmit={handlerFormSubmit}
-                  initialValues={initialValues}
-                  validationSchema={userQuestionSchema}>
-              {({
-                    values,
-                    handleChange,
-                    handleBlur
-
-                    }) => (
             <form action="#">
               <div className="form">
                 <h2 className="title-form">Введіть ваші дані та зв’яжіться з нами:</h2>
                 <div className="item">
                   <label for="name">Ім'я</label>
-                  <input type="text" value={values.firstName} onBlur={handleBlur} onChange={handleChange} name="firstName" id="name" placeholder="Джон" />
+                  <input type="text"  onChange={handleChange} name="firstName" id="name" placeholder="Джон" />
                 </div>
                 <div className="item">
                   <label for="surname">Прізвище</label>
-                  <input type="text" value={values.lastName} onBlur={handleBlur} onChange={handleChange} name="lastName" id="surname" placeholder="Джонсонюк" />
+                  <input type="text"  onChange={handleChange} name="lastName" id="surname" placeholder="Джонсонюк" />
                 </div>
                 <div className="item">
                   <label for="email">Email</label>
-                  <input type="email" value={values.email} onBlur={handleBlur} onChange={handleChange} name="email" id="email" placeholder="fakeEmail@gmail.com" />
+                  <input type="email" onChange={handleChange} name="email" id="email" placeholder="fakeEmail@gmail.com" />
                 </div>
                 <div className="item">
-                  <label for="email">Email</label>
-                  <input type="email" value={values.email} onBlur={handleBlur} onChange={handleChange} name="email" id="email" placeholder="fakeEmail@gmail.com" />
+                  <label for="phoneNumber">Email</label>
+                  <input type="phoneNumber" onChange={handleChange} name="phoneNumber" id="phoneNumber" placeholder="phoneNumber" />
                 </div>
                 <div>
                   <label for="comment">Ваш коментар</label>
-                  <input type="text" value={values.text} onBlur={handleBlur} onChange={handleChange} name="text" id="comment" />
+                  <input type="text" onChange={handleChange} name="text" id="comment" />
                 </div>
-                <button type="submit" className="submit-button">Надіслати</button>
-
+                <button type="submit" onClick={handleSubmit} className="submit-button">Надіслати</button>
               </div>
             </form>
-              )}
-          </Formik>
       </div>
     </footer>
    );

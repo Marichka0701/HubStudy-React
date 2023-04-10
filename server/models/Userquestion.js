@@ -3,23 +3,23 @@ import mongoose from "mongoose";
 const UserQuestionSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        //required: true
+        required: true
     },
     lastName: {
         type: String,
-        //required: true
+        required: true
     },
     phoneNumber: {
-        type: Number,
-        //required: true
+        type: String,
+        required: true
     },
     email: {
         type: String,
-        //required: true
+        required: true
     },
     text: {
         type: String,
-        //required: true
+        required: true
     }
 })
 
