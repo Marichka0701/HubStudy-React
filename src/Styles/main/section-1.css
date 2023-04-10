@@ -42,21 +42,28 @@
   background: none;
 }
 
-.sign_up {
+.startStudyingOne {
   background: #FFFFFF;
   margin-right: 25px;
 }
 
-.sign_in {
+.becomeMentorOne {
   border: 2px solid #FFFFFF;
 }
 
 .images {
 }
+
 .imageSection-1 {
   height: 500px;
   width: 500px;
 }
+
+.startStudyingOne:hover {
+  background-color: #9A9FFF;
+  transition: 1.2s;
+}
+
 
 @media screen and (max-width: 420px) {
   .imageSection-1 {
@@ -66,9 +73,7 @@
   .section-1-info {
     max-width: 400px;
   }
-  .sign_up {
+  .startStudyingOne {
     margin-bottom: 30px;
-  }
-  .section-1 {
   }
 }

@@ -1,8 +1,8 @@
-import '../Styles/footer.css';
+import '../../Styles/main/footer.css';
 
-import instagram from '../img/instagram.png';
-import facebook from '../img/facebook.png';
-import telegram from '../img/telegram.png';
+import instagram from '../../img/instagram.png';
+import facebook from '../../img/facebook.png';
+import telegram from '../../img/telegram.png';
 
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
               <li><a className='link-page' href="">Про нас</a></li>
               <li><a className='link-page' href="">Відгуки</a></li>
               <li><a className='link-page' href="">Співпраця</a></li>
-              <li><a className='link-page' href="">Контакти</a></li>
+              <li className='margin-zero'><a className='link-page' href="">Контакти</a></li>
             </ul>
         </div>
         <div className="block">

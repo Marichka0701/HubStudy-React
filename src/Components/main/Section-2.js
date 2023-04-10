@@ -1,16 +1,16 @@
-import '../Styles/section-2.css';
-import itemOne from '../img/benefits-item-1.png';
-import itemTwo from '../img/benefits-item-2.png';
-import itemThree from '../img/benefits-item-3.png';
-import itemFour from '../img/benefits-item-4.png';
-import itemFive from '../img/benefits-item-5.png';
-import itemSix from '../img/benefits-item-6.png';
-import itemMobOne from '../img/benefits-item-mob-1.png';
-import itemMobTwo from '../img/benefits-item-mob-2.png';
-import itemMobThree from '../img/benefits-item-mob-3.png';
-import itemMobFour from '../img/benefits-item-mob-4.png';
-import itemMobFive from '../img/benefits-item-mob-5.png';
-import itemMobSix from '../img/benefits-item-mob-6.png';
+import '../../Styles/main/section-2.css';
+import itemOne from '../../img/benefits-item-1.png';
+import itemTwo from '../../img/benefits-item-2.png';
+import itemThree from '../../img/benefits-item-3.png';
+import itemFour from '../../img/benefits-item-4.png';
+import itemFive from '../../img/benefits-item-5.png';
+import itemSix from '../../img/benefits-item-6.png';
+import itemMobOne from '../../img/benefits-item-mob-1.png';
+import itemMobTwo from '../../img/benefits-item-mob-2.png';
+import itemMobThree from '../../img/benefits-item-mob-3.png';
+import itemMobFour from '../../img/benefits-item-mob-4.png';
+import itemMobFive from '../../img/benefits-item-mob-5.png';
+import itemMobSix from '../../img/benefits-item-mob-6.png';
 
 
 const SectionTwo = () => {

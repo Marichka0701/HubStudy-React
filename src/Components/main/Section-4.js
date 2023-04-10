@@ -1,5 +1,5 @@
-import '../Styles/section-4.css';
-import sectionFour from '../img/section-4.png';
+import '../../Styles/main/section-4.css';
+import sectionFour from '../../img/section-4.png';
 
 const SectionFour = () => {
   return ( 

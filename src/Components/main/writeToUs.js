@@ -1,4 +1,4 @@
-import '../Styles/writeToUs.css';
+import '../../Styles/main/writeToUs.css';
 
 const writeUS = () => {
   return (

@@ -1,5 +1,5 @@
-import '../Styles/section-5.css';
-import photo from '../img/section-5.png';
+import '../../Styles/main/section-5.css';
+import photo from '../../img/section-5.png';
 import Accordion from 'react-bootstrap/Accordion';
 
 const SectionFive = () => {

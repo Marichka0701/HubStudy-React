@@ -1,5 +1,5 @@
-import '../Styles/reviews.css';
-import reviewItemOne from '../img/reviews-1.png';
+import '../../Styles/main/reviews.css';
+import reviewItemOne from '../../img/reviews-1.png';
 
 const Reviews = () => {
   return ( 

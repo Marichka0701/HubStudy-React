@@ -1,6 +1,6 @@
-import '../Styles/getMentors.css';
-import rates from '../img/Stars_rate.png';
-import sectionThree from '../img/section-3.png';
+import '../../Styles/main/getMentors.css';
+import rates from '../../img/Stars_rate.png';
+import sectionThree from '../../img/section-3.png';
 import Carousel from 'react-bootstrap/Carousel';
 
 const getMentors = () => {

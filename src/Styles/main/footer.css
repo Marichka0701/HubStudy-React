@@ -95,7 +95,10 @@ label {
 #name,
 #surname,
 #email,
-#number {
+#number, 
+#city, 
+#password, 
+.password {
   width: 320px;
   height: 56px;
   padding: 14px 0px 14px 38px;

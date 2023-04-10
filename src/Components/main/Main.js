@@ -1,4 +1,4 @@
-import '../Styles/main.css';
+import '../../Styles/main/main.css';
 
 import Reviews from './Reviews.js';
 import SectionOne from './Section-1';
