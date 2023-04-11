@@ -44,7 +44,9 @@ const SignInPage = () => {
           </div>
 
           <div className="buttons1">
-            <button type="submit" className="log-in">Увійти</button>
+            <Link to="/profile-student">
+              <button type="submit" className="log-in">Увійти</button>
+            </Link>
           </div>
           <div className="bottom-elem">
             <div className="text">Ще не маєте акаунта?

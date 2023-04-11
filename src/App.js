@@ -36,7 +36,9 @@ import RegistrationPage from "./Components/sign-up/Registration.js";
 import RegistrationPageTwo from "./Components/sign-up/RegistrationMentor.js";
 import MentorPage from "./Components/mentorSphere/mentor.js";
 import BecomeMentor from "./Components/sign-up/RegistrationMentor.js";
-// import SignIn from "./Components/sign-in/Sign-in-page.js";
+import SignIn from "./Components/sign-in/Sign-in-page.js";
+import ProfileStudent from "./Components/profile/profileStudent.js";
+
 
 
 function App() {
@@ -55,7 +57,9 @@ function App() {
         <Route path="/student" element={<RegistrationPage/>} />
         <Route path="/mentor-page" element={<MentorPage/>} />
         <Route path="/become-mentor" element={<BecomeMentor/>} />
-        {/* <Route path="/sign-in" element={<SignIn/>} /> */}
+        <Route path="/sign-in" element={<SignIn/>} />
+        <Route path="/profile-student" element={<ProfileStudent/>} />
+
       </Routes>
     </BrowserRouter>
   );
