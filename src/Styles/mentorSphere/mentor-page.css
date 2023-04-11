@@ -33,23 +33,79 @@
   background-color: rgb(255, 255, 255);
   height: 100%;
   padding-top: 100px;
-  /* flex: 0; */
 }
 
-input[type="range"] {
-  width: 250px;
-  background-color: red !important;
+.filter-title {
+  text-align: center;
+}
+
+.wrapper-sidebar {
 
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  background-color: red;
-  color: red;
+.header-price, .header-experience, .header-group, .header-sphere {
+  background-color: #939BFF;
+  border-radius: 10px;
+
+  padding: 10px;
+  margin: 10px;
 }
 
-input[type="range"]::thumb {
-  background-color: red;
-  color: red;
+.price-title, .experience-title, .group-title, .sphere-title {
+  text-align: center;
+
+  margin-bottom: 7px;
+}
+
+.price-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-field {
+  font-size: 20px;
+}
+
+.input-min, .input-max {
+  width: 70px;
+  border-radius: 10px;
+
+  text-align: center;
+  margin: 7px 10px 0;
+}
+
+.group-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.group-label {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.submit-group {
+  margin: 10px 70px 0;
+
+  background-color: #939BFF;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.bodyMentorSphere .selection-form {
+  width: 100%;
 }
 
 .main {
@@ -205,10 +261,12 @@ input[type="range"]::thumb {
   width: calc(100% - 300px);
 }
 
-.bodyMentorSphere .footer {
-  padding: 0px 40px 20px 40px;
-
-  font-size: 24px;
+@media screen and (min-width:1440px) {
+  .bodyMentorSphere .footer {
+    padding: 0px 40px 20px 40px;
+  
+    font-size: 24px;
+  } 
 }
 
 .bodyMentorSphere .link-page {
@@ -233,4 +291,65 @@ input[type="range"]::thumb {
 
 .bodyMentorSphere .block-heading, .title-social {
   margin-bottom: 16px;
+}
+
+@media screen and (max-width: 420px) {
+  .main {
+    background: rgb(255, 138, 48);
+  }
+  .header-price, .header-experience, .header-group, .header-sphere {
+    background: rgb(255, 138, 48);
+  }
+  .submit-group {
+    background: rgb(255, 138, 48);
+  }
+  .mentors-photo {
+    width: 300px;
+    border-radius: 12px;
+    padding-left: 30px;
+  }
+  .mentor-item {
+   background:rgba(255, 255, 255, 0.916);
+   margin: 20px;
+  }
+  .mentor-cons-item {
+    color: rgb(75, 75, 75);
+  }
+  .mentor-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mentor-info {
+    padding: 44px 35px 30px 30px;
+  }
+  .buttons-mentor-list {
+    margin-top: 20px;
+    display: flex;
+  }
+  .bodyMentorSphere .startStudying {
+    margin-right: 10px;
+    width: 180px;
+  }
+  .bodyMentorSphere .about {
+    width: 180px;
+  }
+  .bodyMentorSphere .footer {
+    width: 780px;
+    padding-left: 30px ;
+  }
+  .rating-button {
+    background-color: #FFE146;
+  }
+  .rating-button:hover {
+    background-color: white;
+    transition: 1.2s;
+  }
+  .sphere-button {
+    background-color: #ffffff;
+  }
+  .sphere-button:hover {
+    background-color: #FFE146;
+    transition: 1.2s;
+  }
 }

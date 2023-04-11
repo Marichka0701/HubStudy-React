@@ -175,6 +175,7 @@ select {
 
   .container_registration {
     height: 1305px;
+    background: rgb(255, 138, 48);
   }
 
   .offcanvas-backdrop.show {

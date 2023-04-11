@@ -12,8 +12,6 @@ import '../../Styles/main/navbar.css';
 import HomePage from '../Home';
 
 import React, { useState } from 'react';
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 
 function App() {
@@ -26,12 +24,12 @@ function App() {
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">
-            <Link to="/">
-              <picture>
-                <source srcSet={logoMobile} media="(max-width: 420px)" />
-                <source srcSet={logo} media="(min-width: 421px)" />
-                <img src={logo} alt="" />
-              </picture>
+              <Link to="/">
+                <picture>
+                  <source srcSet={logoMobile} media="(max-width: 420px)" />
+                  <source srcSet={logo} media="(min-width: 421px)" />
+                  <img src={logo} alt="" />
+                </picture>
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -71,7 +69,10 @@ function App() {
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link className='nav-item' href="#action7">Блог</Nav.Link>
-                  <button className='sign-in'>Увійти</button>
+                  <Link to="/sign-in">
+                    <button className='sign-in'>Увійти</button>
+                  </Link>
+
                 </Nav>
 
                 <Link to="/registration">

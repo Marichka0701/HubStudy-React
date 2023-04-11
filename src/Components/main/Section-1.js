@@ -17,7 +17,9 @@ const SectionOne = () => {
           <Link to="/mentor-page">
             <button className="startStudyingOne button">Обрати наставника</button>
           </Link>
-          <button className="becomeMentorOne  button">Стати наставником</button>
+          <Link to="/become-mentor">
+            <button className="becomeMentorOne button">Стати наставником</button>
+          </Link>
         </div>
       </div>
       <div className="images">
