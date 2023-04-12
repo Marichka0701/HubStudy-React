@@ -18,7 +18,7 @@
   }
 }
 
-.container_mentorPage {
+.container_mentorPage, .container_spherePage {
   display: flex;
   flex-direction: row;
 
@@ -117,12 +117,12 @@
   height: 3944px;
 }
 
-.container__Mentor {
+.container__Mentor, .container__sphere {
   max-width: 970px;
   margin: 0 auto;
 }
 
-.title-mentorPage {
+.title-mentorPage, .title-spherePage {
   font-size: 64px;
   line-height: 74px;
   color: #000000;
@@ -132,7 +132,7 @@
   margin-bottom: 24px;
 }
 
-.paragraph-mentorPage {
+.paragraph-mentorPage, .paragraph-spherePage {
   font-size: 18px;
   line-height: 21px;
   color: #000000;
@@ -141,7 +141,7 @@
   margin: 0 auto;
 }
 
-.buttons-mentorPage {
+.buttons-mentorPage, .buttons-spherePage{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
