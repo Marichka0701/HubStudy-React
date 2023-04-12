@@ -18,11 +18,14 @@ export const mentor = [
         lastName: "Biden",
         age: 75,
         qualification: "President",
+        yearOfExpierience: 55,
+        pricePerLesson: 7000,
         description: "senior at the Softserve IT - company C# and C++ developer international students group",
         email: "aaaaaaa@gmail.com",
         password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
         country: "USA",
-        city: "Washington"
+        city: "Washington",
+        availableOnline: true
     },
     {
         _id: userIds[1],
@@ -30,11 +33,14 @@ export const mentor = [
         lastName: "Petro",
         age: 75,
         qualification: "Backend",
+        yearOfExpierience: 5,
+        pricePerLesson: 1200,
         description: "I`m only human",
         email: "aagfgfbfgaaaaa@gmail.com",
         password: "$3b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
         country: "Ukraine",
-        city: "Lviv"
+        city: "Lviv",
+        groupLessons: true
     },
     {
         _id: userIds[2],
@@ -42,11 +48,14 @@ export const mentor = [
         lastName: "Idk",
         age: 37,
         qualification: "Fullstack",
+        yearOfExpierience: 1,
+        pricePerLesson: 400,
         description: "Some description",
         email: "aagfgfbfgaaa5546aa@gmail.com",
         password: "$4b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
         country: "France",
-        city: "Lviv"
+        city: "Lviv",
+        bestMentor: true,
     },
     {
         _id: userIds[3],
@@ -54,11 +63,15 @@ export const mentor = [
         lastName: "Fjfkdg",
         age: 37,
         qualification: "Fullstack",
+        yearOfExpierience: 9,
+        pricePerLesson: 950,
         description: "Another description here",
         email: "aagfgfb3213fgaaa5546aa@gmail.com",
         password: "$5b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
         country: "France",
-        city: "Lviv"
+        city: "Lviv",
+        bestMentor: true,
+        groupLessons: true
     }
 ]
 

@@ -18,13 +18,21 @@ const MentorSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        qualificaton: {
-            type: Array,
-            default: []
+        qualification: {
+            type: String,
+            required: false
+        },
+        yearOfExpierience: {
+            type: Number,
+            required: true,
+        },
+        pricePerLesson: {
+            type: Number,
+            required: false
         },
         description: {
           type: String,
-          required: true,
+          required: false,
           max: 300
         },
         email: {
@@ -44,11 +52,23 @@ const MentorSchema = new mongoose.Schema(
         },
         country: {
             type: String,
-            required: true
+            required: false
         },
         city: {
             type: String,
-            required: true
+            required: false
+        },
+        availableOnline: {
+            type: Boolean,
+            default: true
+        },
+        bestMentor: {
+            type: Boolean,
+            default: false
+        },
+        groupLessons: {
+            type: Boolean,
+            default: true,
         }
     }
 )
