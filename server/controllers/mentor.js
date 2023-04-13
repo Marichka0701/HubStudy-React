@@ -82,7 +82,7 @@ export const login = async (req, res) => {
         if (!isMatch) return res.status(400).json({msg: "Invadil credentials"});
 
 
-        res.status(200).json(true);
+        res.status(200).json({ user });
 
     } catch (err) {
         res.status(500).json({error: err.message});
