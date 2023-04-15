@@ -1,6 +1,9 @@
 import '../../Styles/main/section-4.css';
 import sectionFour from '../../img/section-4.png';
 
+import { Link } from 'react-router-dom';
+
+
 const SectionFour = () => {
   return ( 
     <div className='section-4'>
@@ -9,9 +12,11 @@ const SectionFour = () => {
         </h2>
         <p className='paragraph-1-section-4'>Become one!</p>
         <p className='paragraph-2-section-4'>Fill the blank, create personal account and become a part of our community! Share your knowledge with others! Meet grateful students and blah-blah-blah</p>
+        <Link to="/become-mentor">
         <button className='becomeInstructor'>
         Become an instructor!
         </button>
+          </Link>
         <img className='image-section-4' src={sectionFour} alt='' ></img>
       </div>
    );

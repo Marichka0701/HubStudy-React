@@ -68,7 +68,9 @@ function App() {
                       Something else here
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link className='nav-item' href="#action7">Блог</Nav.Link>
+                  <Link to="/blog" >
+                    <Nav.Link className='nav-item' href="#action7">Блог</Nav.Link>
+                  </Link>
                   <Link to="/sign-in">
                     <button className='sign-in'>Увійти</button>
                   </Link>
