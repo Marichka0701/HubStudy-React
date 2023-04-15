@@ -3,6 +3,7 @@ import '../../Styles/main/reset.css';
 import '../../Styles/sign-up/Registration.css';
 import userPhoto from '../../img/user.png';
 import axios from "axios"
+import formik from "formik"
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +14,8 @@ const initialValues = {
   lastName: "",
   city: "",
   email: "",
-  password: ""
+  password: "",
+  picturePath: ""
 }
 
 const Registration = () => {
@@ -33,8 +35,9 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData);
+    let image = new FormData();
 
-    const userResponse = await axios.post('http://localhost:3001/student', formData)
+    const userResponse = await axios.post('http://localhost:3001/student/register', formData)
     .then(function (response) {
       console.log(response);
       console.log(formData);
@@ -90,7 +93,6 @@ const Registration = () => {
     reader.readAsDataURL(file);
   };
 
-
     return (
       <div className='container_registration'>
         <Header></Header>
@@ -103,35 +105,15 @@ const Registration = () => {
         <div className='form-register'>
           <div className='photo-register'>
             <div class="user-photo">
-              {/* <img className='photo-form' src={userPhoto}></img> */}
+
             </div>
             <div className='upload-photo'>
-              <form className='upload-photo' action='#'>
+              <form className='upload-photo' action='#' enctype="multipart/form-data">
 
 
-              <input className='upload' type="file" onChange={handlePhotoUpload} />
-      {selectedPhoto && <img src={selectedPhoto} alt="Selected" />}
-              {/* <input type="file" accept="image/*" onChange={handlePhotoUpload} />
-      {selectedPhoto && <img src={selectedPhoto} alt="Selected" />} */}
+              <input className='upload' type="file" name="picturePath" onChange={handleChange} />
+              {selectedPhoto && <img src={selectedPhoto} alt="Selected" />}
 
-
-
-              {/* <input className='upload-photo-user' type="file" onChange={handlePhotoUpload} accept="image/*" />
-              {selectedPhoto && <img src={selectedPhoto} alt="Uploaded photo" />} */}
-
-
-                <label className='upload' for="file">Додати фото профілю(250*250)</label>
-                {/* <input className='upload' type='file'></input> */}
-                {/* <input type="file" onChange={handlePhotoUpload} accept="image/*" />
-              {selectedPhoto && <img src={selectedPhoto} alt="Uploaded photo" />} */}
-
-
-                {/* <input type="file" onChange={handlePhotoUpload} accept="image/*" />
-                {selectedPhoto && (
-                  <div className="photo-wrapper">
-                    <img src={selectedPhoto} alt="Uploaded photo" width={200} height={200} />
-                  </div> */}
-                {/* )} */}
               </form>
             </div>
           </div>
@@ -166,7 +148,7 @@ const Registration = () => {
                 <Link to="/mentorship">
                 <button type='submit' className="mentorship-form">Реєстрація як наставник</button>
                 </Link>
-                {/* <button type='submit' className="mentorship-form">Реєстрація як наставник</button> */}
+
               </div>
             </div>
           </form>

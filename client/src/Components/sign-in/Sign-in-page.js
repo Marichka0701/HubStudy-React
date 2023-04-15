@@ -12,6 +12,8 @@ const initialValues = {
 
 const SignInPage = () => {
 
+
+
   const navigate = useNavigate();
   const [formData, updateFormData] = useState(initialValues);
 
@@ -27,6 +29,11 @@ const SignInPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData);
+
+    const resp = await axios.get(`http://localhost:3001/blog`)
+    .then(function(response) {
+      console.log(response.mentor)
+    })
 
     const studentResponse = await axios.post('http://localhost:3001/student/login', formData, {
       headers: { "Content-Type": "application/json" }
@@ -56,6 +63,7 @@ const SignInPage = () => {
     .catch(function (error) {
       console.log(error);
     });
+
 
   };
 
