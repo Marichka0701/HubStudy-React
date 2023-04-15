@@ -29,6 +29,9 @@ const StudentSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        picturePath: {
+            type: String
+        }
     }
 )
 

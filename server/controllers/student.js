@@ -9,7 +9,8 @@ export const createNewUser = async (req, res) => {
             lastName,
             city,
             email,
-            password
+            password,
+            picturePath
         } = req.body;
 
         const salt = await bcrypt.genSalt();
@@ -20,7 +21,8 @@ export const createNewUser = async (req, res) => {
             lastName,
             city,
             email,
-            password: passwordHash
+            password: passwordHash,
+            picturePath
         });
 
         const savedUser = await newUser.save();
@@ -54,4 +56,14 @@ export const getAllStudents = async (req, res) => {
     } catch (error) {
         res.status(404).json({message: error.message});
     }
-  }
+}
+
+export const getStudent = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const student = await Student.findById(id);
+        res.status(200).json(student);
+    } catch (err) {
+        res.status(404).json({message: err.message});
+    }
+};

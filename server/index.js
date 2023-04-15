@@ -8,6 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createNewUser } from "./controllers/student.js";
 import mentorRoutes from "./routes/mentor.js";
 import reviewRoutes from "./routes/review.js";
 import studentRoutes from "./routes/student.js";
@@ -17,6 +18,7 @@ import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
 import Review from "./models/Review.js";
 import Blog from "./models/Blog.js";
+import path from "path";
 
 import { mentor } from "./data/index.js";
 import { review } from "./data/index.js";
@@ -35,7 +37,21 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
+// FILE STORAGE
 
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+      cb(null, "public/assets");
+  },
+  filename: function(req, file, cb) {
+      console.log(file)
+      cb(null, path.extname(file.originalname));
+  }
+});
+
+const upload = multer({storage: storage});
+
+app.post("/student/register", upload.single("picturePath"), createNewUser)
 
 app.use("/mentor", mentorRoutes);
 app.use("/review", reviewRoutes);

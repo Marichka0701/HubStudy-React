@@ -70,8 +70,25 @@ const MentorSchema = new mongoose.Schema(
             type: Boolean,
             default: true,
         }
-    }
-)
+    }, {
+        toJSON: {
+          virtuals: true,
+        },
+        toObject: {
+          virtuals: true
+        }
+      }
+);
+
+
+
+MentorSchema.virtual('blogs', {
+    ref: 'Blog',
+    localField: '_id',
+    foreignField: 'mentor',
+    justOne: false
+  });
+
 
 const Mentor = mongoose.model("Mentor", MentorSchema);
 

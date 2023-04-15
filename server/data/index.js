@@ -117,3 +117,12 @@ export const review = [
         text: "Våvinde. E-demokrati. Sudoku. Den nya ekonomin. Monoligt. Sust. "
     },
 ]
+
+export const blog = [
+
+    {
+        mentor: "64343ab14dc32790de9a5940",
+        text: "dfsgdshf",
+
+    }
+]
