@@ -11,14 +11,16 @@ import { fileURLToPath } from "url";
 import mentorRoutes from "./routes/mentor.js";
 import reviewRoutes from "./routes/review.js";
 import studentRoutes from "./routes/student.js";
+import blogRoutes from "./routes/blog.js";
 import userQuestionRoutes from "./routes/userquestion.js";
 import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
 import Review from "./models/Review.js";
+import Blog from "./models/Blog.js";
 
 import { mentor } from "./data/index.js";
 import { review } from "./data/index.js";
-
+import { blog } from "./data/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,6 +41,7 @@ app.use("/mentor", mentorRoutes);
 app.use("/review", reviewRoutes);
 app.use("/userquestion", userQuestionRoutes);
 app.use("/student", studentRoutes);
+app.use('/blog', blogRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
@@ -51,5 +54,6 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     //Mentor.insertMany(mentor);
    //Review.insertMany(review);
+   //Blog.insertMany(blog);
   })
   .catch((error) => console.log(`${error} did not connect`));

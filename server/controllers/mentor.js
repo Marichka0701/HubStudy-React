@@ -1,4 +1,6 @@
 import Mentor from "../models/Mentor.js";
+import jwt  from "jsonwebtoken";
+import bcrypt from "bcrypt"
 
 export const getAllMentors = async (req, res) => {
   try {
@@ -7,8 +9,16 @@ export const getAllMentors = async (req, res) => {
   } catch (error) {
       res.status(404).json({message: error.message});
   }
-
 }
+
+export const getAllMentor = async (req, res) => {
+    try {
+        const mentor = await Mentor.findById(req.params.id);
+        res.status(200).json(mentor);
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
+  }
 
 export const getFilterMentors = async (req, res) => {
     try {
@@ -54,13 +64,16 @@ export const createNewMentor = async (req, res) => {
             yearOfExpierience
         } = req.body;
 
+        const salt = await bcrypt.genSalt();
+        const passwordHash = await bcrypt.hash(password, salt);
+
         const newUserMentor = new Mentor({
             firstName,
             lastName,
             city,
             email,
             qualification,
-            password,
+            password: passwordHash,
             age,
             yearOfExpierience
         });
@@ -78,12 +91,12 @@ export const login = async (req, res) => {
         const user = await Mentor.findOne({email: email });
         if (!user) return res.status(400).json({msg: "User does not exist"});
 
-        const isMatch = await Mentor.findOne({password: password});
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({msg: "Invadil credentials"});
 
-
-        res.status(200).json({ user });
-
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+        delete user.password;
+        res.status(200).json({ token, user });
     } catch (err) {
         res.status(500).json({error: err.message});
     }
