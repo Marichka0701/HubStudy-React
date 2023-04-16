@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import GetMentor from "./getMentor.js";
 import '../../Styles/main/getMentors.css';
 
-const GetMentors = ({isProfile = false}) => {
+const GetMentors = () => {
   const dispatch = useDispatch();
   const mentor = useSelector((state) => state.mentor);
 
@@ -28,9 +28,9 @@ const GetMentors = ({isProfile = false}) => {
 
   useEffect(() => {
       MentorsGet()
-  }, [])
+  })
 
-  //GetMentors();
+  MentorsGet();
 
 
   return (

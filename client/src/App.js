@@ -39,7 +39,7 @@ import BecomeMentor from "./Components/sign-up/RegistrationMentor.js";
 import SignIn from "./Components/sign-in/Sign-in-page.js";
 import ProfileStudent from "./Components/profile/profileStudent.js";
 import SpherePage from "./Components/mentorSphere/sphere.js";
-
+import BlogPage from "./Components/blog/blog.js"
 
 
 function App() {
@@ -61,6 +61,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn/>} />
         <Route path="/profile-student" element={<ProfileStudent/>} />
         <Route path="/sphere" element={<SpherePage/>} />
+        <Route path="/blog" element={<BlogPage/>} />
 
       </Routes>
     </BrowserRouter>

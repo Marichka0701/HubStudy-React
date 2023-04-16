@@ -24,20 +24,31 @@ const Registration = () => {
   const [formData, updateFormData] = useState(initialValues);
 
   const handleChange = (e) => {
-    updateFormData({
-      ...formData,
-
-      // Trimming any whitespace
-      [e.target.name]: e.target.value.trim()
-    });
+    if (e.target.name === "picturePath") {
+      // Отримати оригінальне ім'я файлу
+      const fileName = e.target.files[0].name;
+      setSelectedPhoto(URL.createObjectURL(e.target.files[0])); // Зберегти тимчасове посилання на фото
+      updateFormData({
+        ...formData,
+        [e.target.name]: fileName // Зберегти оригінальне ім'я файлу
+      });
+    } else {
+      updateFormData({
+        ...formData,
+        [e.target.name]: e.target.value.trim()
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData);
-    let image = new FormData();
 
-    const userResponse = await axios.post('http://localhost:3001/student/register', formData)
+    const userResponse = await axios.post('http://localhost:3001/student/register', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
     .then(function (response) {
       console.log(response);
       console.log(formData);
@@ -50,48 +61,6 @@ const Registration = () => {
   };
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);
-
-  const handlePhotoUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function (event) {
-      const img = new Image();
-      img.onload = function () {
-        let width = img.width;
-        let height = img.height;
-
-        // Check if the image is too big
-        if (width > 250 || height > 250) {
-          // Calculate the aspect ratio
-          const aspectRatio = width / height;
-
-          // If the width is greater than the height, set the width to 250 and adjust the height proportionally
-          if (width > height) {
-            width = 250;
-            height = Math.round(250 / aspectRatio);
-          }
-          // Otherwise, set the height to 250 and adjust the width proportionally
-          else {
-            height = 250;
-            width = Math.round(250 * aspectRatio);
-          }
-        }
-
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = width;
-        canvas.height = height;
-        ctx.drawImage(img, 0, 0, width, height);
-
-        const dataUrl = canvas.toDataURL('image/jpeg');
-        setSelectedPhoto(dataUrl);
-      };
-      img.src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-  };
 
     return (
       <div className='container_registration'>
@@ -113,6 +82,7 @@ const Registration = () => {
 
               <input className='upload' type="file" name="picturePath" onChange={handleChange} />
               {selectedPhoto && <img src={selectedPhoto} alt="Selected" />}
+
 
               </form>
             </div>

@@ -18,7 +18,6 @@ import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
 import Review from "./models/Review.js";
 import Blog from "./models/Blog.js";
-import path from "path";
 
 import { mentor } from "./data/index.js";
 import { review } from "./data/index.js";

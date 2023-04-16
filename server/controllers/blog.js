@@ -13,15 +13,7 @@ export const getBlogByMentorId = async (req, res) => {
     try {
         let query;
 
-        const reqQuery = {...req.query};
-
-        const removeFields = ['select', 'sort', 'page', 'limit'];
-        removeFields.forEach(param => delete reqQuery[param]);
-
-        let queryStr = JSON.stringify(reqQuery);
-        queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
-        query = Blog.find(JSON.parse(queryStr)).populate('mentor');
-
+        query = Blog.find().populate('mentor');
 
         const blog = await query;
         res.status(200).json(blog)
