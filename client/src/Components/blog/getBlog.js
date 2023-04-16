@@ -16,7 +16,7 @@ function TextWithLimit({ text, limit }) {
     );
   }
 
-const getBlog = ({text}) => {
+const getBlog = ({text, name}) => {
     return (
         <>
           <div class="blog-item-item">
@@ -26,9 +26,9 @@ const getBlog = ({text}) => {
                         <img src={mentorPhoto} alt="mentor-photo"></img>
                       </div>
                       <div className="blog-mentor">
-                        <h2 className="blog-mentor-title">Johannes Larsson</h2>
+                        <h2 className="blog-mentor-title">{name}</h2>
                         <p className="blog-mentor-description">
-                          <TextWithLimit text={text} limit={145} />
+                          <TextWithLimit text={text} limit={45} />
                         </p>
                       </div>
                     </div>

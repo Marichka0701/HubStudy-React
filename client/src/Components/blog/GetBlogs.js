@@ -24,17 +24,17 @@ const GetBlogs = () => {
       }
   }
 
-
+  BlogsGet();
 
   return (
     <Carousel>
-      {blog.slice(0, 6).map(({ text }, index) => (
+      {blog.map(({ text }, index) => (
         index % 3 === 0 ? (
           <Carousel.Item key={text} interval={20000}>
             <div className="blog-items">
-              <GetBlog text={text} />
-              {blog[index + 1] && <GetBlog text={blog[index + 1].text} />}
-              {blog[index + 2] && <GetBlog text={blog[index + 2].text} />}
+              <GetBlog text={text} name={`${blog[index].mentor.firstName} ${blog[index].mentor.lastName}`} />
+              {blog[index + 1] && <GetBlog text={blog[index + 1].text} name={`${blog[index + 1].mentor.firstName} ${blog[index + 1].mentor.lastName}`} />}
+              {blog[index + 2] && <GetBlog text={blog[index + 2].text} name={`${blog[index + 2].mentor.firstName} ${blog[index + 2].mentor.lastName}`} />}
             </div>
           </Carousel.Item>
         ) : null
