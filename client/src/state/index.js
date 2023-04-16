@@ -13,12 +13,15 @@ export const authSlice = createSlice({
         },
         setReviews: (state, action) => {
             state.review = action.payload.review
-        }
+        },
+        setBlogs: (state, action) => {
+            state.blog = action.payload.blog
+        },
     }
 
 });
 
-export const { setMentors, setReviews } =
+export const { setMentors, setReviews, setBlogs } =
   authSlice.actions;
 
 export default authSlice.reducer;

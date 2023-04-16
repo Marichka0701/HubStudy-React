@@ -32,7 +32,7 @@ const SignInPage = () => {
 
     const resp = await axios.get(`http://localhost:3001/blog`)
     .then(function(response) {
-      console.log(response.mentor)
+      console.log(response);
     })
 
     const studentResponse = await axios.post('http://localhost:3001/student/login', formData, {

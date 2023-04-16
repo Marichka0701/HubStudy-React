@@ -35,7 +35,6 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData);
-    let image = new FormData();
 
     const userResponse = await axios.post('http://localhost:3001/student/register', formData)
     .then(function (response) {
