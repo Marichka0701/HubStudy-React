@@ -19,7 +19,7 @@
   flex-direction: column;
 }
 
-.body, .container_registration, .mentor-page, .bodyMentorSphere, .blog-page {
+.body, .container_registration, .mentor-page, .bodyMentorSphere, .blog-page, .container-profileStudent {
   font-family: 'Ubuntu';
   font-weight: 400;
   font-size: 24px;
