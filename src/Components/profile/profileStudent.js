@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 
 const profileStudent = () => {
-  return ( 
+  return (
     <div className="container-profileStudent">
       <Nav></Nav>
       <div className="under-header">
@@ -32,7 +32,9 @@ const profileStudent = () => {
           </div>
         </div>
         <div>
-          <button className="changeProfile">Редагувати профіль</button>
+          <Link to="/profile-student-redo">
+            <button className="changeProfile">Редагувати профіль</button>
+          </Link>
         </div>
       </div>
       <div class="main-profileStudent">
@@ -51,11 +53,11 @@ const profileStudent = () => {
                   <p>Нагадування</p>
                 </div>
                 <div className="notes-profile">
-                <img width={30} src={notesIcon} ></img>
+                  <img width={30} src={notesIcon} ></img>
                   <p>Нотатки</p>
                 </div>
                 <div className="chat-profile">
-                <img width={30} src={chatIcon} ></img>
+                  <img width={30} src={chatIcon} ></img>
                   <p>Чат</p>
                 </div>
               </div>
@@ -144,7 +146,7 @@ const profileStudent = () => {
         </div>
       </div>
     </div>
-   );
+  );
 }
- 
+
 export default profileStudent;

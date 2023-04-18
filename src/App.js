@@ -40,6 +40,7 @@ import SignIn from "./Components/sign-in/Sign-in-page.js";
 import ProfileStudent from "./Components/profile/profileStudent.js";
 import SpherePage from "./Components/mentorSphere/sphere.js";
 import BlogPage from "./Components/blog/blog.js";
+import ProfileStudentRedo from "./Components/profile/profileStudentRedo.js";
 
 
 
@@ -63,6 +64,7 @@ function App() {
         <Route path="/profile-student" element={<ProfileStudent/>} />
         <Route path="/sphere" element={<SpherePage/>} />
         <Route path="/blog" element={<BlogPage/>} />
+        <Route path="/profile-student-redo" element={<ProfileStudentRedo/>} />
 
       </Routes>
     </BrowserRouter>
