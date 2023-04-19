@@ -44,13 +44,17 @@ const storage = multer.diskStorage({
   },
   filename: function(req, file, cb) {
       console.log(file)
-      cb(null, path.extname(file.originalname));
+      cb(null, file.originalname);
   }
 });
 
 const upload = multer({storage: storage});
 
-app.post("/student/register", upload.single("picturePath"), createNewUser)
+app.post("/student/register", upload.single('picturePath'), createNewUser)
+app.post("/text", upload.single('image'),(req, res) => {
+  // Файл успішно завантажений, можна виконати додаткові дії
+  res.status(200).send('Файл успішно завантажений');
+});
 
 app.use("/mentor", mentorRoutes);
 app.use("/review", reviewRoutes);

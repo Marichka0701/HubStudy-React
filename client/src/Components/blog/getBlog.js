@@ -34,7 +34,6 @@ const getBlog = ({text, name}) => {
                     </div>
                   </a>
                 </div>
-
         </>
     )
 }

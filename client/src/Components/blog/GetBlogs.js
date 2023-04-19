@@ -24,7 +24,7 @@ const GetBlogs = () => {
       }
   }
 
-  BlogsGet();
+  //BlogsGet();
 
   return (
     <Carousel>

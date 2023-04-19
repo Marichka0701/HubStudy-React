@@ -3,6 +3,8 @@ import "../../Styles/sign-in/sign-in.css";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setLogin } from '../../state/index.js';
 import { Link } from 'react-router-dom';
 
 const initialValues = {
@@ -13,7 +15,7 @@ const initialValues = {
 const SignInPage = () => {
 
 
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [formData, updateFormData] = useState(initialValues);
 
@@ -43,7 +45,15 @@ const SignInPage = () => {
       console.log(formData);
       const loggedIn = response;
       if (loggedIn)
-        navigate("/profile-student")
+      {
+        dispatch(
+          setLogin({
+            user: response.user,
+            token: loggedIn.token,
+          })
+        );
+        navigate(`/profile-student/${loggedIn.data.user._id}`)
+      }
     })
     .catch(function (error) {
       console.log(error);

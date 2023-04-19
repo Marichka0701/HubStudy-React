@@ -24,20 +24,10 @@ const Registration = () => {
   const [formData, updateFormData] = useState(initialValues);
 
   const handleChange = (e) => {
-    if (e.target.name === "picturePath") {
-      // Отримати оригінальне ім'я файлу
-      const fileName = e.target.files[0].name;
-      setSelectedPhoto(URL.createObjectURL(e.target.files[0])); // Зберегти тимчасове посилання на фото
-      updateFormData({
-        ...formData,
-        [e.target.name]: fileName // Зберегти оригінальне ім'я файлу
-      });
-    } else {
       updateFormData({
         ...formData,
         [e.target.name]: e.target.value.trim()
       });
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -62,6 +52,57 @@ const Registration = () => {
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
+  const handlePhotoUpload = (e) => {
+
+    if (e.target.name === "picturePath") {
+      const fileName = e.target.files[0].name;
+      setSelectedPhoto(URL.createObjectURL(e.target.files[0]));
+      updateFormData({
+        ...formData,
+        [e.target.name]: fileName
+      });
+    }
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const img = new Image();
+      img.onload = function () {
+        let width = img.width;
+        let height = img.height;
+
+        // Check if the image is too big
+        if (width > 250 || height > 250) {
+          // Calculate the aspect ratio
+          const aspectRatio = width / height;
+
+          // If the width is greater than the height, set the width to 250 and adjust the height proportionally
+          if (width > height) {
+            width = 250;
+            height = Math.round(250 / aspectRatio);
+          }
+          // Otherwise, set the height to 250 and adjust the width proportionally
+          else {
+            height = 250;
+            width = Math.round(250 * aspectRatio);
+          }
+        }
+
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(img, 0, 0, width, height);
+
+        const dataUrl = canvas.toDataURL('image/jpeg');
+        setSelectedPhoto(dataUrl);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  };
+
     return (
       <div className='container_registration'>
         <Header></Header>
@@ -76,11 +117,11 @@ const Registration = () => {
             <div class="user-photo">
 
             </div>
-            <div className='upload-photo'>
+            <div className='upload-photo' id="registrationForm">
               <form className='upload-photo' action='#' enctype="multipart/form-data">
 
 
-              <input className='upload' type="file" name="picturePath" onChange={handleChange} />
+              <input className='upload' type="file" name="picturePath" onChange={handlePhotoUpload} />
               {selectedPhoto && <img src={selectedPhoto} alt="Selected" />}
 
 
@@ -113,6 +154,7 @@ const Registration = () => {
                 <label for='repeat-password'>Повторіть пароль</label>
                 <input className='password' type="password" name="repeat-password" id="repeat-password" placeholder="**************" />
               </div>
+
               <div class="buttons-registration">
                 <button type='submit' onClick={handleSubmit} className="sign-up-form">Зареєструватись</button>
                 <Link to="/mentorship">
