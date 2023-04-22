@@ -10,13 +10,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { createNewUser } from "./controllers/student.js";
 import mentorRoutes from "./routes/mentor.js";
-import reviewRoutes from "./routes/review.js";
 import studentRoutes from "./routes/student.js";
 import blogRoutes from "./routes/blog.js";
 import userQuestionRoutes from "./routes/userquestion.js";
+import noteRoutes from "./routes/notes.js"
 import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
-import Review from "./models/Review.js";
 import Blog from "./models/Blog.js";
 
 import { mentor } from "./data/index.js";
@@ -57,10 +56,10 @@ app.post("/text", upload.single('image'),(req, res) => {
 });
 
 app.use("/mentor", mentorRoutes);
-app.use("/review", reviewRoutes);
 app.use("/userquestion", userQuestionRoutes);
 app.use("/student", studentRoutes);
 app.use('/blog', blogRoutes);
+app.use('/note', noteRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

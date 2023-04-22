@@ -71,7 +71,9 @@ const ProfileStudent = () => {
           </div>
         </div>
         <div>
-          <button className="changeProfile">Редагувати профіль</button>
+          <Link to="/profile-student-redo">
+            <button className="changeProfile">Редагувати профіль</button>
+          </Link>
         </div>
       </div>
       <div class="main-profileStudent">
