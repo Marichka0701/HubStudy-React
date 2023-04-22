@@ -20,6 +20,20 @@ export const createNewNote = async(req, res) => {
       }
 }
 
+export const getNotes = async (req, res) => {
+  try {
+    let query;
+    const reqQuery = {...req.query};
+
+    query = Notes.find(reqQuery);
+
+    const note = await query;
+    res.status(200).json(note);
+  } catch (err) {
+      res.status(404).json({message: err.message});
+  }
+};
+
 export const deleteNote = async (req, res) => {
   const { noteId, text } = req.body
   const notes = await Notes.findByIdAndDelete( noteId , {
