@@ -40,7 +40,8 @@ import SignIn from "./Components/sign-in/Sign-in-page.js";
 import ProfileStudent from "./Components/profile/profileStudent.js";
 import SpherePage from "./Components/mentorSphere/sphere.js";
 import BlogPage from "./Components/blog/blog.js"
-
+import ProfileStudentRedo from "./Components/profile/profileStudentRedo.js"
+import TestPage from "./Components/text.js"
 
 function App() {
   return (
@@ -59,10 +60,11 @@ function App() {
         <Route path="/mentor-page" element={<MentorPage/>} />
         <Route path="/become-mentor" element={<BecomeMentor/>} />
         <Route path="/sign-in" element={<SignIn/>} />
-        <Route path="/profile-student" element={<ProfileStudent/>} />
+        <Route path="/profile-student/:userId" element={<ProfileStudent/>} />
+        <Route path="/profile-student-redo" element={<ProfileStudentRedo/>} />
         <Route path="/sphere" element={<SpherePage/>} />
         <Route path="/blog" element={<BlogPage/>} />
-
+        <Route path="/text" element={<TestPage />} />
       </Routes>
     </BrowserRouter>
   );

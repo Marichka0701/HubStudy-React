@@ -32,7 +32,6 @@ const GetMentors = () => {
 
   MentorsGet();
 
-
   return (
       <Carousel>
           {mentor.map(
