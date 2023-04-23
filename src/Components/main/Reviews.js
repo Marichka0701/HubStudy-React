@@ -19,7 +19,52 @@ const Reviews = () => {
             </h3>
           </div>
           <div className='description-review'>
-            <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+            <p>"Зручна у використанні платформа, швидко знайшов наставника. Дякую!"</p>
+          </div>
+        </div>
+      </div>
+      <div className='review-item'>
+        <div className='image-review'>
+          <img src= {reviewItemOne} alt="" ></img>
+        </div>
+        <div className='text-review'>
+          <div className='log-review'>
+            <h3 className='log-review-item'>
+            Stepan
+            </h3>
+          </div>
+          <div className='description-review'>
+            <p>"Наставник, з яким я працював, був дуже терплячий та знаючий. Я рекомендую цей сайт всім, хто шукає якісну допомогу в навчанні."</p>
+          </div>
+        </div>
+      </div>
+      <div className='review-item'>
+        <div className='image-review'>
+          <img src= {reviewItemOne} alt="" ></img>
+        </div>
+        <div className='text-review'>
+          <div className='log-review'>
+            <h3 className='log-review-item'>
+            Karina
+            </h3>
+          </div>
+          <div className='description-review'>
+            <p>"Заняття проходять дуже продуктивно, і я відчуваю, що роблю значний прогрес."</p>
+          </div>
+        </div>
+      </div>
+      <div className='review-item'>
+        <div className='image-review'>
+          <img src= {reviewItemOne} alt="" ></img>
+        </div>
+        <div className='text-review'>
+          <div className='log-review'>
+            <h3 className='log-review-item'>
+            Мирослава
+            </h3>
+          </div>
+          <div className='description-review'>
+            <p>"Я дуже задоволений заняттями з наставником на цьому сайті! Вона дуже професійна, мої знання зросли у декілька раз"</p>
           </div>
         </div>
       </div>

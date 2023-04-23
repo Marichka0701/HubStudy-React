@@ -9,9 +9,7 @@ const SectionOne = () => {
       <div className="section-1-info">
         <h1 className="main-title">Learn with us!</h1>
         <div className="main-paragraph">
-          <p>Lörem ipsum bitårat plafaspeligt. Flipperförälder susade dest alogi och kompetensväxling kvasipp. Sora
-            reanårade stereotik. Makrosk fåtufiliga förutom krorat, henifiera nydektigt, annonsblockerare. Tradade
-            prerel inte jabor bongen ande svajpa. </p>
+          <p>Навчайтеся з професійними викладачами та отримуйте необхідні знання для досягнення своїх цілей. Оберіть викладача, який підходить саме вам, та почніть свій навчальний процес вже сьогодні. Хочете допомогти іншим у навчанні? Станьте нашим наставником і передайте свої знання та досвід іншим.</p>
         </div>
         <div className="main-buttons">
           <Link to="/mentor-page">

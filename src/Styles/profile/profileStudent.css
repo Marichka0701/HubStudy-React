@@ -156,6 +156,21 @@ p {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 45px;
+  margin-left: 50px;
+}
+@media screen and (max-width: 420px) {
+  .sections-profile {
+    margin-left: 0;
+  }
+  .myLessons-student {
+    margin:  0 auto;
+  }
+  .block-lessons {
+    flex-wrap: wrap;
+  }
+  .mytasks-student {
+    margin-bottom: 50px;
+  }
 }
 
 .myLessons-student,

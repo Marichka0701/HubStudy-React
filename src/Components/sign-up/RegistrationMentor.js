@@ -202,18 +202,17 @@ const Registration = () => {
                     <option>ІТ-сфера</option>
                   </select> */}
                 <Form.Select id='selection-form' name='selection-form' className='selection-form' aria-label="Default select example">
-                  <option disabled>Оберіть сферу</option>
-                  <option value="1">Уроки вокалу</option>
-                  <option selected value="2">Плавання</option>
-                  <option value="3">ІТ-сфера</option>
-                  <option value="4">ІТ-сфера</option>
-                  <option value="5">ІТ-сфера</option>
-                  <option value="6">ІТ-сфера</option>
-                  <option value="7">ІТ-сфера</option>
-                  <option value="8">ІТ-сфера</option>
-                  <option value="9">ІТ-сфера</option>
-                  <option value="10">ІТ-сфера</option>
-                  <option value="11">ІТ-сфера</option>
+                  <option selected disabled>Оберіть сферу</option>
+                  <option value="1">Дизайн UX/UI</option>
+                  <option value="2">Бізнес та менеджмент</option>
+                  <option value="3">Лідерство та комунікація</option>
+                  <option value="4">Право</option>
+                  <option value="5">Дикція та ораторське мистецтво</option>
+                  <option value="6">Фінансова грамотність</option>
+                  <option value="7">Плавання</option>
+                  <option value="8">Стрільба</option>
+                  <option value="9">Психологія</option>
+                  <option value="10">SMM</option>
                 </Form.Select>
               </div>
               <div className='item-form retreat experience'>

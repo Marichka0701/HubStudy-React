@@ -9,7 +9,7 @@ const SectionFive = () => {
         <div className='content-section-5'>
         <Accordion className="my-accordion" defaultActiveKey="0">
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Header>Як знайти необхідний курс/матеріал для вивчення?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -18,7 +18,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Header>Які є можливості взаємодії з іншими користувачами?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -27,7 +27,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Accordion Item #3</Accordion.Header>
+        <Accordion.Header>Чи є можливість отримати сертифікат про успішне закінчення курсу?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -36,7 +36,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
-        <Accordion.Header>Accordion Item #4</Accordion.Header>
+        <Accordion.Header>Як можна змінити свій профіль на сайті, включаючи пароль та електронну адресу?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -45,7 +45,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="4">
-        <Accordion.Header>Accordion Item #5</Accordion.Header>
+        <Accordion.Header>Як можна дізнатися про нові курси або матеріали, які додані на сайт?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -54,7 +54,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="5">
-        <Accordion.Header>Accordion Item #6</Accordion.Header>
+        <Accordion.Header>Як можна звернутися до підтримки користувачів, якщо виникли проблеми з сайтом?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -63,7 +63,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="6">
-        <Accordion.Header>Accordion Item #7</Accordion.Header>
+        <Accordion.Header>Які є можливості взаємодії з іншими користувачами?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -72,7 +72,7 @@ const SectionFive = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="7">
-        <Accordion.Header>Accordion Item #8</Accordion.Header>
+        <Accordion.Header>Якщо мені потрібна допомога, куди мені звернутися?</Accordion.Header>
         <Accordion.Body>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
