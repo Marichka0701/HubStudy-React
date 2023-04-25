@@ -4,7 +4,6 @@ import '../../Styles/blog/blog.css';
 import '../../Styles/main/general.css';
 import tipsPhoto from "../../img/tips-photo.png";
 import mentorPhoto from "../../img/mentor-photo.png";
-
 import Carousel from 'react-bootstrap/Carousel';
 
 function TextWithLimit({ text, limit }) {
