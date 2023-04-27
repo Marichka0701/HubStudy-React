@@ -9,7 +9,6 @@ const FilterMentors = ({formData}) => {
     const mentor = useSelector((state) => state.mentor);
 
 
-
     const getMentors = async () => {
         try {
         const { minPrice, maxPrice, minQualify, maxQualify, groupLessons, qualification } = formData;

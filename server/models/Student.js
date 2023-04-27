@@ -35,6 +35,13 @@ const StudentSchema = new mongoose.Schema(
     }
 )
 
+StudentSchema.virtual('note', {
+    ref: 'Notes',
+    localField: '_id',
+    foreignField: 'user',
+    justOne: false
+  });
+
 const Student = mongoose.model("Student", StudentSchema);
 
 export default Student;

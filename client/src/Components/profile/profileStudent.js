@@ -27,19 +27,15 @@ const ProfileStudent = () => {
   const [user, setUser] = useState(initialValues);
   const { userId } = useParams();
   const token = useSelector((state) => state.token);
-
   const getUser = async () => {
     const studentResponse = await axios.get(`http://localhost:3001/student/${userId}`)
     .then(function (response) {
         const data = response.data;
-        console.log(data);
         setUser(data);
-        console.log(user);
     })
     .catch(function (error) {
       console.log(error);
     });
-    console.log(user);
   }
 
   useEffect(() => {
@@ -91,10 +87,12 @@ const ProfileStudent = () => {
                   <img width={30} src={reminderIcon} ></img>
                   <p>Нагадування</p>
                 </div>
-                <div className="notes-profile">
-                <img width={30} src={notesIcon} ></img>
-                  <p>Нотатки</p>
-                </div>
+                <Link to="/view-notes">
+                  <button className="notes-profile">
+                  <img width={30} src={notesIcon} ></img>
+                    <p>Нотатки</p>
+                  </button>
+                </Link>
                 <div className="chat-profile">
                 <img width={30} src={chatIcon} ></img>
                   <p>Чат</p>

@@ -48,8 +48,8 @@ const SignInPage = () => {
       {
         dispatch(
           setLogin({
-            user: response.user,
-            token: loggedIn.token,
+            user: loggedIn.data.user,
+            token: loggedIn.data.token,
           })
         );
         navigate(`/profile-student/${loggedIn.data.user._id}`)

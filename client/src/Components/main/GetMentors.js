@@ -19,7 +19,6 @@ const GetMentors = () => {
       });
 
       let data = await response.json();
-      console.log(data);
       dispatch(setMentors({ mentor: data }));
       } catch (err) {
           console.log(err)
@@ -28,9 +27,8 @@ const GetMentors = () => {
 
   useEffect(() => {
       MentorsGet()
-  })
+  }, [])
 
-  MentorsGet();
 
   return (
       <Carousel>

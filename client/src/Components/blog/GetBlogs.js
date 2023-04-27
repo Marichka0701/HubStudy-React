@@ -24,7 +24,9 @@ const GetBlogs = () => {
       }
   }
 
-  //BlogsGet();
+  useEffect(() => {
+    BlogsGet()
+}, [])
 
   return (
     <Carousel>

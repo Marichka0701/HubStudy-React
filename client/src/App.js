@@ -41,7 +41,10 @@ import ProfileStudent from "./Components/profile/profileStudent.js";
 import SpherePage from "./Components/mentorSphere/sphere.js";
 import BlogPage from "./Components/blog/blog.js"
 import ProfileStudentRedo from "./Components/profile/profileStudentRedo.js"
+import ViewNotes from "./Components/notes/viewNotes.js";
+import CreateNotes from "./Components/notes/createNotes.js";
 import TestPage from "./Components/text.js"
+
 
 function App() {
   return (
@@ -64,6 +67,8 @@ function App() {
         <Route path="/profile-student-redo" element={<ProfileStudentRedo/>} />
         <Route path="/sphere" element={<SpherePage/>} />
         <Route path="/blog" element={<BlogPage/>} />
+        <Route path="/create-notes" element={<CreateNotes/>} />
+        <Route path="/view-notes" element={<ViewNotes/>} />
         <Route path="/text" element={<TestPage />} />
       </Routes>
     </BrowserRouter>
