@@ -100,3 +100,17 @@
 .container-profileStudentRedo .calendar {
   max-width: 800px;
 }
+.container-profileStudentRedo #bio {
+  padding: 20px;
+}
+.container-profileStudentRedo #withSound, .container-profileStudentRedo #withoutSound {
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

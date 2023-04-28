@@ -66,7 +66,7 @@ const profileMentor = () => {
               <div class="one-of-three-function">
                 <img class="bell-div" src={bellIcon} alt="bell ring"/>
                 <div class="func-text">
-                  Нагадування
+                  <Link to="/view-reminders">Нагадування</Link>
                 </div>
               </div>
               
@@ -334,10 +334,10 @@ const profileMentor = () => {
                 </div>
               </div>
               <div class="more-students-list">
-                <details>
+                {/* <details>
                   <summary class="summary-btn">
-                  </summary>
-                  <div class="block-student">
+                  </summary> */}
+                  {/* <div class="block-student">
                     <img class="student-photo" src={studentOne} alt="Student"/>
                     <ul class="student-text">
                       <li class="student">
@@ -363,8 +363,8 @@ const profileMentor = () => {
                       </li>
                       <li class="student-email">uchnivskaposhta@gmail.com</li>
                     </ul>
-                  </div>
-                </details>
+                  </div> */}
+                {/* </details> */}
               </div>
             </div>
           </div>

@@ -5,6 +5,22 @@ import { Link } from 'react-router-dom';
 
 
 const SignInPage = () => {
+  // $('#email, #password').bind('keyup', function () {
+  //   if (allFilled())
+  //     $('#register').removeAttr('disabled');
+  // });
+  
+  // function allFilled() {
+  //   let filled = true;
+  
+  //   $('body input').each(function () {
+  //     if ($(this).val() == '')
+  //       filled = false;
+  //   });
+  
+  //   return filled;
+  // }
+
   return (
     <div className='form-sign-in'>
       <div class="wrapper_sign-in">

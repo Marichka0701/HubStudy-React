@@ -80,12 +80,13 @@ const profileMentorRedo = () => {
         </div>
         <div className="mainProfileStudentRedo">
           <div className="sectionBio">
-            <input className="bio" id="bio" type="text" placeholder="досвідчена тренерка з плавання;
+            {/* <input className="bio" id="bio" type="text" placeholder="досвідчена тренерка з плавання;
 майстер спорту з плавання;
 здобула вищу освіту в Національному університеті “Львівська політехніка”;
 добра та терпляча до учнів;
 sdkjnvsjkdnfkssdkfskd jfhskhf sdhf;
-dfkhk fghfhg urtoe ;"></input>
+dfkhk fghfhg urtoe ;"></input> */}
+            <textarea id="bio" rows={10} cols={10}></textarea>
             <img src={iconPencil}></img>
           </div>
           <div class="sectionOneStudentProfile">
@@ -93,14 +94,18 @@ dfkhk fghfhg urtoe ;"></input>
               <div className="function-btn">Функції</div>
               <div className="reminder-loudness">
                 <p>Нагадування</p>
-                <div>
-                  <img width={28} src={reminderIcon}></img>
-                  <p>Зі звуком</p>
-                </div>
-                <div>
-                  <img src={reminderIconWithout}></img>
-                  <p>Зі звуком</p>
-                </div>
+                <button id="withSound">
+                  <div>
+                    <img width={28} src={reminderIcon}></img>
+                    <p>Зі звуком</p>
+                  </div>
+                </button>
+                <button id="withoutSound">
+                  <div>
+                    <img src={reminderIconWithout}></img>
+                    <p>Без звуку</p>
+                  </div>
+                </button>
               </div>
             </div>
             {/* <div className="contactBlock-redo">

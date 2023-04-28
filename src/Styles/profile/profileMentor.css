@@ -79,11 +79,19 @@ flex-wrap: wrap;
   border: none;
   border-radius: 1000px;
   background-color: #FFE146 ;
+  transition: 1.2s;
 }
-
+/* .wrapper-profileMentor .button-edit:hover {
+  transition: 1.2s;
+  background-color: #FFE146;
+} */
 .wrapper-profileMentor .button-edit:hover {
+  transition: 1.2s;
   background-color: #FFEC89;
   color: #323232;
+}
+.wrapper-profileMentor a {
+  color: black;
 }
 
 .wrapper-profileMentor .button-edit-wrapp {
@@ -96,9 +104,9 @@ flex-wrap: wrap;
 position: relative;
 background-color: #E2E4FF;
 border-radius: 1000px;
-width: 100%;
+/* width: 100%; */
 margin-right: 30px;
-margin-left: 64px;
+/* margin-left: 64px; */
 bottom: 153px;
 flex-wrap: wrap;
 
@@ -460,6 +468,8 @@ padding: 40px;
 
  .comment{
   margin-top: 44px;
+  font-size: 18px;
+line-height: 22px;
 }
 
 .avatar-comentator{
