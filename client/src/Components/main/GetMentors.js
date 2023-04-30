@@ -14,12 +14,11 @@ const GetMentors = () => {
   const MentorsGet = async () => {
       try {
 
-      const response = await fetch(`http://localhost:3001/mentor/filter?bestMentor=true`, {
+      const response = await fetch(`http://localhost:3001/mentor?bestMentor=true`, {
           method: 'GET',
       });
 
       let data = await response.json();
-      console.log(data);
       dispatch(setMentors({ mentor: data }));
       } catch (err) {
           console.log(err)
@@ -28,13 +27,12 @@ const GetMentors = () => {
 
   useEffect(() => {
       MentorsGet()
-  })
+  }, [])
 
-  MentorsGet();
 
   return (
       <Carousel>
-          {mentor.map(
+          {mentor && mentor.map(
               ({
                   firstName,
                   lastName,

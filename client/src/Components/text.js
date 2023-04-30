@@ -1,46 +1,55 @@
-import Nav from '../Components/main/Nav.js';
-import axios from "axios"
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 
-import Main from '../Components/main/Main.js';
-import Footer from '../Components/main/Footer.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+function App() {
+  const [messages, setMessages] = useState([]);
+  const [newMessage, setNewMessage] = useState('');
 
+  const socket = io('http://localhost:9000');
 
+  useEffect(() => {
+    socket.on('messageToClients', (msg) => {
+      setMessages((prevMessages) => [...prevMessages, msg.text]);
+    });
+  }, [socket]);
 
-const handleSubmit = async (req, res) => {
-  const form = document.getElementById('registrationForm');
-
-  form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const formData = new FormData(form)
-
-  try {
-    const response = await axios.post('http://localhost:3001/text', formData);
-
-    if (response.ok) {
-      console.log('Фото успішно завантажено');
-      // Додаткові дії після успішного завантаження фото
-    } else {
-      console.error('Помилка при завантаженні фото');
-    }
-  } catch (error) {
-    console.error(error);
+  function handleSubmit(event) {
+    event.preventDefault();
+    socket.emit('newMessageToServer', { text: newMessage });
+    setNewMessage('');
   }
-});
-}
-
-
-const TestPage = () => {
-
-
 
   return (
-            <form id="registrationForm">
-                <input type="file" name="image" />
-                <button onClick={handleSubmit} type="submit">Зареєструватися</button>
-            </form>
-   );
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-12">
+          <form onSubmit={handleSubmit}>
+            <div className="col-sm-10">
+              <input
+                id="user-message"
+                type="text"
+                placeholder="Enter your message"
+                value={newMessage}
+                onChange={(event) => setNewMessage(event.target.value)}
+              />
+            </div>
+            <div className="col-sm-2">
+              <input className="btn btn-primary" type="submit" value="Send!" />
+            </div>
+          </form>
+          <ul id="messages" style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
+            {messages.map((message, index) => (
+              <li key={index} style={{ padding: '5px 10px', background: index % 2 === 0 ? '#fff' : '#aaa' }}>
+                {message}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default TestPage;
+export default App;

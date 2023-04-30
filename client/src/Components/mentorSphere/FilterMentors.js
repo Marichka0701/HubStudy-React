@@ -9,7 +9,6 @@ const FilterMentors = ({formData}) => {
     const mentor = useSelector((state) => state.mentor);
 
 
-
     const getMentors = async () => {
         try {
         const { minPrice, maxPrice, minQualify, maxQualify, groupLessons, qualification } = formData;
@@ -24,7 +23,7 @@ const FilterMentors = ({formData}) => {
             filter += `yearOfExpierience[lt]=${maxQualify}&`;
         if (groupLessons !== "")
             filter += `groupLessons=true&`
-        const response = await fetch(`http://localhost:3001/mentor/filter?${filter}`, {
+        const response = await fetch(`http://localhost:3001/mentor?${filter}`, {
             method: 'GET',
         });
 
@@ -40,7 +39,6 @@ const FilterMentors = ({formData}) => {
         getMentors()
     })
 
-    //getMentors();
 
 
     return (

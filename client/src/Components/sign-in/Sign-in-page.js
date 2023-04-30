@@ -48,8 +48,9 @@ const SignInPage = () => {
       {
         dispatch(
           setLogin({
-            user: response.user,
-            token: loggedIn.token,
+            status: "student",
+            user: loggedIn.data.user,
+            token: loggedIn.data.token,
           })
         );
         navigate(`/profile-student/${loggedIn.data.user._id}`)
@@ -67,8 +68,16 @@ const SignInPage = () => {
       console.log(formData);
       const loggedIn = response;
       if (loggedIn)
-        navigate("/profile-student")
-      console.log(loggedIn);
+      {
+        dispatch(
+          setLogin({
+            status: "mentor",
+            user: loggedIn.data.user,
+            token: loggedIn.data.token,
+          })
+        );
+        navigate(`/profile-mentor/${loggedIn.data.user._id}`)
+      }
     })
     .catch(function (error) {
       console.log(error);

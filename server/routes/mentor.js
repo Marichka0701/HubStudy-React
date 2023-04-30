@@ -1,14 +1,15 @@
 import express from "express";
 import { getAllMentors,
          getFilterMentors,
+         getMentor,
          createNewMentor,
          login,} from "../controllers/mentor.js";
 
 const router = express.Router();
 
-router.get("/", getAllMentors);
+router.get("/", getFilterMentors);
 router.post("/", createNewMentor)
 router.post("/login", login);
-router.get("/filter", getFilterMentors)
+router.get('/:id', getMentor);
 
 export default router

@@ -10,13 +10,28 @@ import logo from '../../img/logo.svg';
 import logoMobile from '../../img/logo-mob.png';
 import '../../Styles/main/navbar.css';
 import HomePage from '../Home';
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLogout } from '../../state';
+
+import profilePicHeader from "../../img/profilePicHeader.png"
 
 function App() {
   const [smShow, setSmShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  let isLoggedIn = false;
+  let userId;
+  const user = useSelector((state) => state.user);
+  const status = useSelector((state) => state.status)
+
+  if (user)
+  {
+    isLoggedIn = true
+    userId = user._id
+  }
 
   return (
     <div className="navbar-menu">
@@ -71,56 +86,34 @@ function App() {
                   <Link to="/blog" >
                     <Nav.Link className='nav-item' href="#action7">Блог</Nav.Link>
                   </Link>
-                  <Link to="/sign-in">
-                    <button className='sign-in'>Увійти</button>
-                  </Link>
 
+                  {!isLoggedIn && (
+                    <>
+                      <Link to="/sign-in">
+                        <button className='sign-in'>Увійти</button>
+                      </Link>
+                      <Link to="/registration">
+                        <button className='sign-up'>Зареєструватись</button>
+                      </Link>
+                    </>
+                  )}
+
+                 {isLoggedIn && (
+                  <>
+                      {status == "student" && (
+                        <button onClick={() => navigate(`/profile-student/${userId}`)} className='profilePic'>
+                          <img className='profilePic-img' width={60} src={profilePicHeader} />
+                        </button>
+                      )}
+                      {status == "mentor" && (
+                        <button onClick={() => navigate(`/profile-mentor/${userId}`)} className='profilePic'>
+                          <img className='profilePic-img' width={60} src={profilePicHeader} />
+                        </button>
+                      )}
+                    <button className='logout' onClick={() => dispatch(setLogout()) && navigate('/')}>Вийти</button>
+                  </>
+                 )}
                 </Nav>
-
-                <Link to="/registration">
-                  <button className='sign-up'>Зареєструватись</button>
-                </Link>
-                {/* <button className='sign-up' >Зареєструватись</button> */}
-
-                {/* <Button onClick={() => setSmShow(true)} className="me-2">
-        Small modal
-      </Button> */}
-
-
-                {/* <Button onClick={() => setLgShow(true)}>Large modal</Button> */}
-
-
-
-                {/* <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-            Small Modal
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>...</Modal.Body>
-      </Modal> */}
-
-
-                {/* <Modal
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Реєстрація
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='bg-btn'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Modal.Body>
-      </Modal> */}
 
 
                 <NavDropdown

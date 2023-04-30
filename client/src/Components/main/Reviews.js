@@ -1,7 +1,9 @@
 import '../../Styles/main/reviews.css';
 import reviewItemOne from '../../img/reviews-1.png';
-
+import { useSelector } from 'react-redux';
 const Reviews = () => {
+  const token = useSelector((state) => state.token);
+  console.log(token);
   return (
     <div className='reviews'>
     <h2 className='title-reviews'>
