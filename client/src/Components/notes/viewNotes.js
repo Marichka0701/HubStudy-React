@@ -17,6 +17,7 @@ const ViewNotes = () => {
 
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
+  const status = useSelector((state) => state.status)
   const note = useSelector((state) => state.note);
   const userId = user._id;
 
@@ -28,9 +29,17 @@ const ViewNotes = () => {
         <div className="menu-section">
           <div className="menu-content">
             <div className="avatar">
-             <button className="button-avatar" onClick={() => navigate(`/profile-student/${userId}`)}>
-              <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+             {status == "student" && (
+              <button className="button-avatar" onClick={() => navigate(`/profile-student/${userId}`)}>
+                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
              </button>
+             )}
+
+             {status == "mentor" && (
+              <button className="button-avatar" onClick={() => navigate(`/profile-mentor/${userId}`)}>
+                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+             </button>
+             )}
             </div>
             <div className="icon-wrapper">
               <Link to="#">

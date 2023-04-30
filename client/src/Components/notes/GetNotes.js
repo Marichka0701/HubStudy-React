@@ -30,7 +30,6 @@ const GetNotes = () => {
       NotesGet()
   }, [])
 
-
   if (note)
     show = true;
   console.log(show)

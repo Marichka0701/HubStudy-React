@@ -43,6 +43,11 @@ import BlogPage from "./Components/blog/blog.js"
 import ProfileStudentRedo from "./Components/profile/profileStudentRedo.js"
 import ViewNotes from "./Components/notes/viewNotes.js";
 import CreateNotes from "./Components/notes/createNotes.js";
+import ProfileMentor from "./Components/profile/profileMentor.js";
+import ProfileMentorRedo from "./Components/profile/profileMentorRedo.js";
+import ViewReminder from "./Components/reminder/viewReminder.js";
+import CreateReminder from "./Components/reminder/createReminder.js";
+
 import TestPage from "./Components/text.js"
 
 
@@ -65,10 +70,14 @@ function App() {
         <Route path="/sign-in" element={<SignIn/>} />
         <Route path="/profile-student/:userId" element={<ProfileStudent/>} />
         <Route path="/profile-student-redo" element={<ProfileStudentRedo/>} />
+        <Route path="/profile-mentor/:userId" element={<ProfileMentor/>} />
+        <Route path="/profile-mentor-redo" element={<ProfileMentorRedo/>} />
         <Route path="/sphere" element={<SpherePage/>} />
         <Route path="/blog" element={<BlogPage/>} />
         <Route path="/create-notes" element={<CreateNotes/>} />
         <Route path="/view-notes" element={<ViewNotes/>} />
+        <Route path="/view-reminders" element={<ViewReminder/>} />
+        <Route path="/create-reminder" element={<CreateReminder/>} />
         <Route path="/text" element={<TestPage />} />
       </Routes>
     </BrowserRouter>

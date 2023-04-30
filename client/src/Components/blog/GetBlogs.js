@@ -28,9 +28,11 @@ const GetBlogs = () => {
     BlogsGet()
 }, [])
 
+  BlogsGet()
+
   return (
     <Carousel>
-      {blog.map(({ text }, index) => (
+      {blog && blog.map(({ text }, index) => (
         index % 3 === 0 ? (
           <Carousel.Item key={text} interval={20000}>
             <div className="blog-items">

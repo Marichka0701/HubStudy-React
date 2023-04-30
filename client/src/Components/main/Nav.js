@@ -25,6 +25,8 @@ function App() {
   let isLoggedIn = false;
   let userId;
   const user = useSelector((state) => state.user);
+  const status = useSelector((state) => state.status)
+
   if (user)
   {
     isLoggedIn = true
@@ -98,9 +100,16 @@ function App() {
 
                  {isLoggedIn && (
                   <>
-                      <button onClick={() => navigate(`/profile-student/${userId}`)} className='profilePic'>
-                        <img className='profilePic-img' width={60} src={profilePicHeader} />
-                      </button>
+                      {status == "student" && (
+                        <button onClick={() => navigate(`/profile-student/${userId}`)} className='profilePic'>
+                          <img className='profilePic-img' width={60} src={profilePicHeader} />
+                        </button>
+                      )}
+                      {status == "mentor" && (
+                        <button onClick={() => navigate(`/profile-mentor/${userId}`)} className='profilePic'>
+                          <img className='profilePic-img' width={60} src={profilePicHeader} />
+                        </button>
+                      )}
                     <button className='logout' onClick={() => dispatch(setLogout()) && navigate('/')}>Вийти</button>
                   </>
                  )}

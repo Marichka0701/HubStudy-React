@@ -101,3 +101,13 @@ export const login = async (req, res) => {
         res.status(500).json({error: err.message});
     }
 }
+
+export const getMentor = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const mentor = await Mentor.findById(id);
+        res.status(200).json(mentor);
+    } catch (err) {
+        res.status(404).json({message: err.message});
+    }
+};

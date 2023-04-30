@@ -83,10 +83,12 @@ const ProfileStudent = () => {
                 Функції
               </div>
               <div className="function">
-                <div className="reminder-profile">
-                  <img width={30} src={reminderIcon} ></img>
-                  <p>Нагадування</p>
-                </div>
+                <Link to="/view-reminders">
+                  <div className="reminder-profile">
+                    <img width={30} src={reminderIcon} ></img>
+                    <p>Нагадування</p>
+                  </div>
+                </Link>
                 <Link to="/view-notes">
                   <button className="notes-profile">
                   <img width={30} src={notesIcon} ></img>

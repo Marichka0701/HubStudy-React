@@ -14,11 +14,16 @@ export const authSlice = createSlice({
         setNotes: (state, action) => {
             state.note = action.payload.note
         },
+        setNotifications: (state, action) => {
+            state.notification = action.payload.notification
+        },
         setLogin: (state, action) => {
+            state.status = action.payload.status;
             state.user = action.payload.user;
             state.token = action.payload.token;
         },
         setLogout: (state) => {
+            state.status = null;
             state.user = null;
             state.token = null;
             state.note = null;
@@ -33,7 +38,7 @@ export const authSlice = createSlice({
 
 });
 
-export const { setMentors, setNotes, setLogin, setLogout, setReviews, setBlogs } =
+export const { setMentors, setNotes, setNotifications, setLogin, setLogout, setReviews, setBlogs } =
   authSlice.actions;
 
 export default authSlice.reducer;

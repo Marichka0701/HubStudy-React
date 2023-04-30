@@ -14,7 +14,7 @@ const GetMentors = () => {
   const MentorsGet = async () => {
       try {
 
-      const response = await fetch(`http://localhost:3001/mentor/filter?bestMentor=true`, {
+      const response = await fetch(`http://localhost:3001/mentor?bestMentor=true`, {
           method: 'GET',
       });
 
@@ -32,7 +32,7 @@ const GetMentors = () => {
 
   return (
       <Carousel>
-          {mentor.map(
+          {mentor && mentor.map(
               ({
                   firstName,
                   lastName,

@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   userId: "",
-  text: ""
+  text: "",
 }
 
 const CreateNotes = () => {
@@ -41,7 +41,18 @@ const CreateNotes = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData);
-    const userResponse = await axios.post('http://localhost:3001/note', formData)
+
+    const mentorResponse = await axios.post('http://localhost:3001/note/mentor', formData)
+    .then(function (response) {
+      console.log(response);
+      console.log(formData);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    console.log(formData);
+
+    const studentResponse = await axios.post('http://localhost:3001/note/student', formData)
     .then(function (response) {
       console.log(response);
       console.log(formData);
