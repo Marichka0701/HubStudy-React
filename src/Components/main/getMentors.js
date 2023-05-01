@@ -3,6 +3,10 @@ import rates from '../../img/Stars_rate.png';
 import sectionThree from '../../img/section-3.png';
 import Carousel from 'react-bootstrap/Carousel';
 
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 const getMentors = () => {
   return ( 
     <div className="section-3">
@@ -35,7 +39,9 @@ const getMentors = () => {
               </ul>
               <img src={rates} alt=''></img>
               <div className='buttons-section-3'>
+                <Link to = "/start-study">
                 <button className='startStudying'>Почати навчання</button>
+                </Link>
                 <button className='about'>Детальніше</button>
               </div>
             </div>
@@ -104,7 +110,7 @@ const getMentors = () => {
               </ul>
               <img src={rates} alt=''></img>
               <div className='buttons-section-3'>
-                <button className='startStudying'>Почати навчання</button>
+                <Link to="/start-study"><button className='startStudying'>Почати навчання</button></Link>
                 <button className='about'>Детальніше</button>
               </div>
             </div>
