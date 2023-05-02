@@ -131,7 +131,10 @@ const Mentor = () => {
                     <img src={mentorRating}></img>
                   </div>
                   <div className="buttons-mentor-list">
+                  <Link to="/about-study">
                     <button className="startStudying">Почати навчання</button>
+                     </Link>
+
                     <button className="about">Детальніше</button>
                   </div>
                 </div>
@@ -164,7 +167,9 @@ const Mentor = () => {
                     <img src={mentorRating}></img>
                   </div>
                   <div className="buttons-mentor-list">
+                  <Link to="/about-study">
                     <button className="startStudying">Почати навчання</button>
+                     </Link>
                     <button className="about">Детальніше</button>
                   </div>
                 </div>
@@ -197,7 +202,9 @@ const Mentor = () => {
                     <img src={mentorRating}></img>
                   </div>
                   <div className="buttons-mentor-list">
+                  <Link to="/about-study">
                     <button className="startStudying">Почати навчання</button>
+                     </Link>
                     <button className="about">Детальніше</button>
                   </div>
                 </div>
@@ -230,7 +237,9 @@ const Mentor = () => {
                     <img src={mentorRating}></img>
                   </div>
                   <div className="buttons-mentor-list">
+                  <Link to="/about-study">
                     <button className="startStudying">Почати навчання</button>
+                     </Link>
                     <button className="about">Детальніше</button>
                   </div>
                 </div>
@@ -263,7 +272,9 @@ const Mentor = () => {
                     <img src={mentorRating}></img>
                   </div>
                   <div className="buttons-mentor-list">
+                  <Link to="/about-study">
                     <button className="startStudying">Почати навчання</button>
+                     </Link>
                     <button className="about">Детальніше</button>
                   </div>
                 </div>
