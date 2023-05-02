@@ -52,13 +52,15 @@
 
 @media screen and (max-width: 420px) {
   .container-profileStudentRedo .my-students-title-shape {
-  background-color: #ff8a30;
-  color: white;
+    background-color: #ff8a30;
+    color: white;
   }
+
   .block-student {
-  background-color: #ffdbc1;
+    background-color: #ffdbc1;
   }
 }
+
 .container-profileStudentRedo .block-student {
   display: flex;
   justify-content: flex-start;
@@ -77,9 +79,11 @@
     margin-left: 35px;
   }
 }
+
 .container-profileStudentRedo .function-btn {
   margin-left: 0;
 }
+
 .container-profileStudentRedo .header-sphere {
   margin-left: 0;
 }
@@ -97,13 +101,17 @@
   align-items: flex-start;
   gap: 25px;
 }
+
 .container-profileStudentRedo .calendar {
   max-width: 800px;
 }
+
 .container-profileStudentRedo #bio {
   padding: 20px;
 }
-.container-profileStudentRedo #withSound, .container-profileStudentRedo #withoutSound {
+
+.container-profileStudentRedo #withSound,
+.container-profileStudentRedo #withoutSound {
   cursor: pointer;
   border: 1px solid white;
   background-color: transparent;
@@ -113,4 +121,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.item-tasks div input {
+  padding: 5px;
 }

@@ -310,15 +310,18 @@ dfkhk fghfhg urtoe ;"></input> */}
                   <div class="item-tasks">
                     <div>
                       <p>Тести:</p>
-                      <a href="http://yourtesturl.com">http://yourtesturl.com </a>
+                      {/* <a href="http://yourtesturl.com">http://yourtesturl.com </a> */}
+                      <input type="text" placeholder="http://yourtesturl.com" ></input>
                     </div>
                     <div>
                       <p>Відео:</p>
-                      <a href="https://youtu.be/6SjBv5AuL8E">https://youtu.be/6SjBv5AuL8E</a>
+                      <input type="text" placeholder="http://yourtesturl.com" ></input>
+
                     </div>
                     <div>
                       <p>Тести:</p>
-                      <a href="http://yourmanualurl.com" >http://yourmanualurl.com </a>
+                      <input type="text" placeholder="http://yourtesturl.com" ></input>
+
                     </div>
                   </div>
                 </div>
