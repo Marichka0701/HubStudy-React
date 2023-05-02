@@ -39,10 +39,10 @@ const getMentors = () => {
               </ul>
               <img src={rates} alt=''></img>
               <div className='buttons-section-3'>
-                <Link to = "/start-study">
+               
                 <button className='startStudying'>Почати навчання</button>
-                </Link>
-                <button className='about'>Детальніше</button>
+            
+                <Link to="/start-study"><button className='about'>Детальніше</button></Link>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const getMentors = () => {
               <img src={rates} alt=''></img>
               <div className='buttons-section-3'>
                 <button className='startStudying'>Почати навчання</button>
-                <button className='about'>Детальніше</button>
+                <Link to="/start-study"><button className='about'>Детальніше</button></Link>
               </div>
             </div>
           </div>
@@ -110,8 +110,8 @@ const getMentors = () => {
               </ul>
               <img src={rates} alt=''></img>
               <div className='buttons-section-3'>
-                <Link to="/start-study"><button className='startStudying'>Почати навчання</button></Link>
-                <button className='about'>Детальніше</button>
+               <button className='startStudying'>Почати навчання</button>
+               <Link to="/start-study"><button className='about'>Детальніше</button></Link>
               </div>
             </div>
           </div>
