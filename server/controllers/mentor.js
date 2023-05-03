@@ -104,10 +104,22 @@ export const login = async (req, res) => {
 
 export const getMentor = async (req, res) => {
     try {
-        const { id } = req.params;
         const mentor = await Mentor.findById(id);
         res.status(200).json(mentor);
     } catch (err) {
         res.status(404).json({message: err.message});
     }
 };
+
+export const newStudent = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { studentId, mentorId } = req.body;
+        const update = await Mentor.findByIdAndUpdate(mentorId, {
+           $push: { student: studentId }
+        });
+        res.status(200).json(update)
+    } catch (err) {
+        res.status(405).json({message: err.message})
+    }
+}

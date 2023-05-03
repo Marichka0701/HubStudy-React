@@ -17,6 +17,7 @@ import blogRoutes from "./routes/blog.js";
 import userQuestionRoutes from "./routes/userquestion.js";
 import noteRoutes from "./routes/notes.js"
 import notificationRoutes from "./routes/notification.js"
+import lessonRoutes from "./routes/lesson.js"
 import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
 import Blog from "./models/Blog.js";
@@ -57,7 +58,7 @@ const upload = multer({storage: storage});
 
 
 app.post("/student/register", upload.single('picturePath'), createNewUser)
-app.post("/text", upload.single('image'),(req, res) => {
+app.post("/student/photo", upload.single('picturePath'),(req, res) => {
   // Файл успішно завантажений, можна виконати додаткові дії
   res.status(200).send('Файл успішно завантажений');
 });
@@ -68,7 +69,7 @@ app.use("/student", studentRoutes);
 app.use('/blog', blogRoutes);
 app.use('/note', noteRoutes);
 app.use('/notification', notificationRoutes);
-
+app.use('/lesson', lessonRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

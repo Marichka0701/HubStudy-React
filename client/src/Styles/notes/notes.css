@@ -105,12 +105,12 @@ body{
   border: 2px solid #9868ff;
 }
 
-.upper-section {
+/* .upper-section {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 .title-section  {
   display: flex;

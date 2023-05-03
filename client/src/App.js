@@ -47,6 +47,7 @@ import ProfileMentor from "./Components/profile/profileMentor.js";
 import ProfileMentorRedo from "./Components/profile/profileMentorRedo.js";
 import ViewReminder from "./Components/reminder/viewReminder.js";
 import CreateReminder from "./Components/reminder/createReminder.js";
+import AboutStudy from "./Components/startStudy/about.js";
 
 import TestPage from "./Components/text.js"
 
@@ -78,6 +79,7 @@ function App() {
         <Route path="/view-notes" element={<ViewNotes/>} />
         <Route path="/view-reminders" element={<ViewReminder/>} />
         <Route path="/create-reminder" element={<CreateReminder/>} />
+        <Route path="/about-study/:mentorId" element={<AboutStudy/>} />
         <Route path="/text" element={<TestPage />} />
       </Routes>
     </BrowserRouter>
