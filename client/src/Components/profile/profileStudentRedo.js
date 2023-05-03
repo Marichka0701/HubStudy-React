@@ -8,15 +8,76 @@ import iconPencil from "../../img/pencil-icon.png";
 import reminderIcon from "../../img/reminder-icon.png";
 import reminderIconWithout from "../../img/without-sound.png";
 import swimming from "../../img/swimming.png";
-
-
-
-
-import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+import { useSelector } from "react-redux";
 
-const profileStudentRedo = () => {
+
+const initialValues = {
+  firstName: "",
+  lastName: "",
+  email: ""
+}
+
+
+
+const ProfileStudentRedo = () => {
+  const [formData, updateFormData] = useState(initialValues);
+  const [user, setUser] = useState({});
+  const user1 = useSelector((state) => state.user);
+  const userId = user1._id;
+
+  const handleChange = (e) => {
+    updateFormData({
+      ...formData,
+      [e.target.name]: e.target.value.trim()
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+
+    const updateResponse = await axios.patch(`http://localhost:3001/student/${userId}`, formData)
+    .then(function (response) {
+      console.log(response);
+      console.log(formData);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    console.log(formData);
+  };
+
+ const getUser = async () => {
+    const studentResponse = await axios.get(`http://localhost:3001/student/${userId}`)
+    .then(function (response) {
+        const data = response.data;
+        console.log(data);
+        setUser(data);
+        console.log(user);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    console.log(user);
+  }
+
+  useEffect(() => {
+    getUser();
+  }, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const {
+    firstName,
+    lastName,
+    email
+  } = user;
+
+  console.log(userId);
+
   return (
     <div className="container-profileStudentRedo">
       <Nav></Nav>
@@ -24,11 +85,11 @@ const profileStudentRedo = () => {
         <div>
           <div className="nameSurname">
             <div>
-              <input id="nameStudent-input" placeholder="Студентін" className="nameStudent"></input>
+              <input onChange={handleChange} name="firstName" id="nameStudent-input" placeholder="Студентін" className="nameStudent"></input>
               <img src={iconPencil}></img>
             </div>
             <div>
-            <input id="surnameStudent-input" placeholder="Студентін" className="surnameStudent"></input>
+            <input onChange={handleChange} name="lastName" id="surnameStudent-input" placeholder="Студентін" className="surnameStudent"></input>
             <img src={iconPencil}></img>
             </div>
           </div>
@@ -37,7 +98,7 @@ const profileStudentRedo = () => {
           </div>
         </div>
         <div>
-            <button type="submit" className="changeProfile">Зберегти</button>
+            <button type="submit" onClick={handleSubmit} className="changeProfile">Зберегти</button>
         </div>
 
       </div>
@@ -67,11 +128,11 @@ const profileStudentRedo = () => {
             <div className="function-btn">Контакти</div>
               <div className="reminder-loudness">
                 <div>
-                <input id="emailStudent-input" placeholder="mentorivna1986@gmail.com" className="emailStudent"></input>
+                <input type="email" onChange={handleChange} name="email" id="emailStudent-input" placeholder="mentorivna1986@gmail.com" className="emailStudent"></input>
                 <img src={iconPencil}></img>
                 </div>
                 <div>
-                <input id="emailStudent-input" placeholder="mentorivna1986@gmail.com" className="emailStudent"></input>
+                <input type="email" onChange={handleChange} name="email" id="emailStudent-input" placeholder="mentorivna1986@gmail.com" className="emailStudent"></input>
                 <img src={iconPencil}></img>
                 </div>
               </div>
@@ -155,4 +216,4 @@ const profileStudentRedo = () => {
    );
 }
 
-export default profileStudentRedo;
+export default ProfileStudentRedo;

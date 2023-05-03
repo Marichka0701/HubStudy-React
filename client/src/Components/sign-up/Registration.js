@@ -34,6 +34,17 @@ const Registration = () => {
     e.preventDefault()
     console.log(formData);
 
+    const form = document.getElementById('photoForm');
+
+    const photoData = new FormData(form);
+
+
+    const photoResponse = await axios.post('http://localhost:3001/student/photo', photoData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+
     const userResponse = await axios.post('http://localhost:3001/student/register', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -48,6 +59,8 @@ const Registration = () => {
       console.log(error);
     });
     console.log(formData);
+
+
   };
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -118,7 +131,7 @@ const Registration = () => {
 
             </div>
             <div className='upload-photo' id="registrationForm">
-              <form className='upload-photo' action='#' enctype="multipart/form-data">
+              <form className='upload-photo' id="photoForm" action='#' enctype="multipart/form-data">
 
 
               <input className='upload' type="file" name="picturePath" onChange={handlePhotoUpload} />

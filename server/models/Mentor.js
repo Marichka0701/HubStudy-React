@@ -69,6 +69,10 @@ const MentorSchema = new mongoose.Schema(
         groupLessons: {
             type: Boolean,
             default: true,
+        },
+        student: {
+            type: Array,
+            default: []
         }
     }, {
         toJSON: {
@@ -84,6 +88,13 @@ const MentorSchema = new mongoose.Schema(
 
 MentorSchema.virtual('blogs', {
     ref: 'Blog',
+    localField: '_id',
+    foreignField: 'mentor',
+    justOne: false
+  });
+
+  MentorSchema.virtual('lessons', {
+    ref: 'Lessons',
     localField: '_id',
     foreignField: 'mentor',
     justOne: false

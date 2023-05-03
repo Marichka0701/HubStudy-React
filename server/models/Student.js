@@ -32,7 +32,15 @@ const StudentSchema = new mongoose.Schema(
         picturePath: {
             type: String
         }
-    }
+    },
+    {
+        toJSON: {
+          virtuals: true,
+        },
+        toObject: {
+          virtuals: true
+        }
+      }
 )
 
 StudentSchema.virtual('note', {
@@ -42,6 +50,12 @@ StudentSchema.virtual('note', {
     justOne: false
   });
 
+StudentSchema.virtual('lessons', {
+    ref: 'Lessons',
+    localField: '_id',
+    foreignField: 'student',
+    justOne: false
+  });
 const Student = mongoose.model("Student", StudentSchema);
 
 export default Student;
