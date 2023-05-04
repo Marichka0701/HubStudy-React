@@ -8,7 +8,8 @@ export const createNewLesson = async(req, res) => {
                 price,
                 location,
                 date,
-                duration } = req.body;
+                duration,
+                sphere } = req.body;
 
         const newLesson = new Lesson({
                 mentor,
@@ -16,7 +17,8 @@ export const createNewLesson = async(req, res) => {
                 price,
                 location,
                 date,
-                duration
+                duration,
+                sphere
         });
 
         const lesson = await newLesson.save();
@@ -30,5 +32,25 @@ export const updateLesson = async(req, res) => {
     const lesson = await Lesson.findByIdAndUpdate(req.params.id, {finished: false})
 
     res.status(200).json(lesson);
+}
 
+export const getLessons = async (req, res) => {
+    try {
+        let query;
+        const reqQuery = {...req.query};
+
+        const removeFields = ['select', 'sort', 'page', 'limit'];
+        removeFields.forEach(param => delete reqQuery[param]);
+
+        let queryStr = JSON.stringify(reqQuery);
+        queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
+        query = Lesson.find(JSON.parse(queryStr));
+
+        const lessons = await query;
+        res.status(200).json(lessons);
+
+
+    } catch (error) {
+        res.status(404).json({message: error.message});
+    }
 }

@@ -70,10 +70,9 @@ const MentorSchema = new mongoose.Schema(
             type: Boolean,
             default: true,
         },
-        student: {
-            type: Array,
-            default: []
-        }
+        student: [
+            { type: mongoose.Schema.Types.ObjectId, ref: 'Student' }
+        ]
     }, {
         toJSON: {
           virtuals: true,

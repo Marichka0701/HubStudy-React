@@ -7,8 +7,8 @@ import { useState } from "react";
 import axios from "axios";
 
 const initialValues = {
-  mentorId: "",
-  studentId: "",
+  mentor: "",
+  student: "",
   sphere: "",
   duration: "",
   timesPerWeek: "",
@@ -22,8 +22,8 @@ const AboutStudy = () => {
   const user = useSelector((state) => state.user);
   const userId = user._id;
 
-  formData.mentorId = mentorId;
-  formData.studentId = userId;
+  formData.mentor = mentorId;
+  formData.student = userId;
 
   const handleChange = (e) => {
     updateFormData({
@@ -43,15 +43,15 @@ const AboutStudy = () => {
       console.log(response)
     })
 
-    // const userResponse = await axios.post('http://localhost:3001/lesson', formData)
-    // .then(function (response) {
-    //   console.log(response);
-    //   console.log(formData);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
-    // console.log(formData);
+    const userResponse = await axios.post('http://localhost:3001/lesson', formData)
+    .then(function (response) {
+      console.log(response);
+      console.log(formData);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    console.log(formData);
 
 
   }

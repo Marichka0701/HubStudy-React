@@ -31,7 +31,8 @@ const StudentSchema = new mongoose.Schema(
         },
         picturePath: {
             type: String
-        }
+        },
+
     },
     {
         toJSON: {
@@ -52,6 +53,13 @@ StudentSchema.virtual('note', {
 
 StudentSchema.virtual('lessons', {
     ref: 'Lessons',
+    localField: '_id',
+    foreignField: 'student',
+    justOne: false
+  });
+
+  StudentSchema.virtual('mentors', {
+    ref: 'Mentor',
     localField: '_id',
     foreignField: 'student',
     justOne: false

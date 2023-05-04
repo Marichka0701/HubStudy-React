@@ -27,6 +27,7 @@ export const authSlice = createSlice({
             state.user = null;
             state.token = null;
             state.note = null;
+            state.lesson = null;
         },
         setReviews: (state, action) => {
             state.review = action.payload.review
@@ -34,11 +35,17 @@ export const authSlice = createSlice({
         setBlogs: (state, action) => {
             state.blog = action.payload.blog
         },
+        setMentor: (state, action) => {
+            state.user = action.payload.user;
+        },
+        setLessons: (state, action) => {
+            state.lesson = action.payload.lesson;
+        }
     }
 
 });
 
-export const { setMentors, setNotes, setNotifications, setLogin, setLogout, setReviews, setBlogs } =
+export const { setMentors, setNotes, setNotifications, setLogin, setLogout, setReviews, setBlogs, setMentor, setLessons } =
   authSlice.actions;
 
 export default authSlice.reducer;

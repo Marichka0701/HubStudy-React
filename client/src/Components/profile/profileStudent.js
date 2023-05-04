@@ -9,11 +9,12 @@ import chatIcon from "../../img/chat-icon.png";
 import swimming from "../../img/swimming.png";
 import axios from "axios"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
+import { setLessons } from "../../state";
 
 
 const initialValues = {
@@ -22,10 +23,16 @@ const initialValues = {
   email: ""
 }
 
+const initialValuesLessons = {
+  duration: ""
+}
+
 
 const ProfileStudent = () => {
   const [user, setUser] = useState(initialValues);
   const { userId } = useParams();
+  const dispatch = useDispatch();
+  const lesson = useSelector((state) => state.lesson)
   const token = useSelector((state) => state.token);
   const getUser = async () => {
     const studentResponse = await axios.get(`http://localhost:3001/student/${userId}`)
@@ -36,13 +43,25 @@ const ProfileStudent = () => {
     .catch(function (error) {
       console.log(error);
     });
+
+
+    const lessonsResponse = await axios.get(`http://localhost:3001/lesson?student=${userId}`)
+    .then(function (response) {
+      const data = response.data;
+      dispatch(
+        setLessons({
+          lesson: data
+        })
+      )
+      console.log(lesson)
+    })
+
   }
 
   useEffect(() => {
     getUser();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  //getUser();
   const {
     firstName,
     lastName,
@@ -117,52 +136,37 @@ const ProfileStudent = () => {
             <div className="myLessons-student">
               <div className="myLessons-btn">Мої заняття</div>
               <div className="block-lessons">
-                <div className="item-lessons">
-                  <div className="photo-lesson">
-                    <img src={swimming} ></img>
-                  </div>
-                  <div className="about-lesson">
-                    <div>
-                      <h2 className="title-lesson">Підготовка до спортивних змагань:</h2>
-                    </div>
-                    <div>
-                      <p className="description-lesson">Змагання на носі, а ви не знаєте як до них підготуватись?</p>
-                    </div>
-                    <div className="durationPrice">
-                      <div>
-                        <p>Ціна заняття:</p>
-                        <p>350 грн</p>
+              {lesson.map((el, index) => {
+                  return (
+                    <>
+                    <div className="item-lessons">
+                      <div className="photo-lesson">
+                        <img src={swimming} ></img>
                       </div>
-                      <div>
-                        <p>Тривалість заняття:</p>
-                        <p>1,5 год</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="item-lessons">
-                  <div className="photo-lesson">
-                    <img src={swimming} ></img>
-                  </div>
-                  <div className="about-lesson">
-                    <div>
-                      <h2 className="title-lesson">Підготовка до спортивних змагань:</h2>
-                    </div>
-                    <div>
-                      <p className="description-lesson">Змагання на носі, а ви не знаєте як до них підготуватись?</p>
-                    </div>
-                    <div className="durationPrice">
-                      <div>
-                        <p>Ціна заняття:</p>
-                        <p>350 грн</p>
-                      </div>
-                      <div>
-                        <p>Тривалість заняття:</p>
-                        <p>1,5 год</p>
+                      <div className="about-lesson">
+                        <div>
+                          <h2 className="title-lesson">{lesson[index].sphere}</h2>
+                        </div>
+                        <div>
+                          <p className="description-lesson">Змагання на носі, а ви не знаєте як до них підготуватись?</p>
+                        </div>
+                        <div className="durationPrice">
+                          <div>
+                            <p>Ціна заняття:</p>
+                            <p>350 грн</p>
+                          </div>
+                          <div>
+                            <p>Тривалість заняття:</p>
+                            <p>{el.duration / 60} год</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+
+              </>
+
+                  );
+                })}
               </div>
             </div>
             <div className="mytasks-student">

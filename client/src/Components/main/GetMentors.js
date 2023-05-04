@@ -29,7 +29,6 @@ const GetMentors = () => {
       MentorsGet()
   }, [])
 
-
   return (
       <Carousel>
           {mentor && mentor.map(
