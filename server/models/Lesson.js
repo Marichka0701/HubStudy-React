@@ -39,6 +39,7 @@ const LessonSchema = new mongoose.Schema({
     }
 }, {timestamps: true} )
 
+
 const Lesson = mongoose.model("Lesson", LessonSchema);
 
 export default Lesson;

@@ -1,4 +1,5 @@
 import Mentor from "../models/Mentor.js";
+import Student from "../models/Student.js";
 import jwt  from "jsonwebtoken";
 import bcrypt from "bcrypt"
 
@@ -88,7 +89,7 @@ export const createNewMentor = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = await Mentor.findOne({email: email });
+        const user = await Mentor.findOne({email: email }).populate('student');
         if (!user) return res.status(400).json({msg: "User does not exist"});
 
         const isMatch = await bcrypt.compare(password, user.password);
@@ -104,7 +105,9 @@ export const login = async (req, res) => {
 
 export const getMentor = async (req, res) => {
     try {
-        const mentor = await Mentor.findById(id);
+        const { id } = req.params;
+        const mentor = await Mentor.findById(id).populate('student');
+
         res.status(200).json(mentor);
     } catch (err) {
         res.status(404).json({message: err.message});

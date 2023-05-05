@@ -12,6 +12,7 @@ import "../../Styles/profile/profileMentor.css";
 import "../../Styles/profile/dycalendar.css";
 // import dycalendar from  "../../Components/profile/dyCalendar.js";
 import Nav from "../../Components/main/Nav";
+import { setMentor } from "../../state";
 
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -23,7 +24,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
 import axios from "axios";
-
+import { useDispatch, useSelector } from "react-redux";
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -34,11 +35,18 @@ const ProfileMentor = () => {
 
   const [user, setUser] = useState(initialValues);
   const { userId } = useParams();
+  const dispatch = useDispatch();
   const getUser = async () => {
     const mentorResponse = await axios.get(`http://localhost:3001/mentor/${userId}`)
     .then(function (response) {
         const data = response.data;
         setUser(data);
+        dispatch(
+          setMentor({
+            user: data
+          })
+        )
+        console.log(data)
     })
     .catch(function (error) {
       console.log(error);
@@ -47,15 +55,32 @@ const ProfileMentor = () => {
 
   useEffect(() => {
     getUser();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   //getUser();
   const {
     firstName,
     lastName,
-    email
+    email,
+    student
   } = user;
 
+  const mentor = useSelector((state) => state.user);
+
+  if (mentor.student)
+  {
+    var uniqueStudents = mentor.student.reduce((acc, student) => {
+      if (!acc[student._id]) {
+
+        acc[student._id] = {
+          firstName: student.firstName,
+          lastName: student.lastName,
+          email: student.email,
+        };
+      }
+      return acc;
+    }, {});
+  }
 
   return (
     <>
@@ -319,84 +344,47 @@ const ProfileMentor = () => {
     </LocalizationProvider>
     </div>
             <div class="my-students-wrapper">
-              <div class="my-students-title-container">
+              {(mentor.student[0]) && (
+                <div class="my-students-title-container">
                 <div class="my-students-title-shape">
                   <div class="my-students-title-text">
                     Мої учні:
                   </div>
                 </div>
               </div>
+              )}
               <div class="my-students-list-container">
-                <div class="block-student">
-                    <img class="student-photo"  src={studentOne} alt="Student"/>
-                    <ul class="student-text">
-                      <li class="student">
-                        Учень Учньович
-                      </li>
-                      <li class="student-email">uchnivskaposhta@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="block-student">
-                  <img class="student-photo"  src={studentTwo} alt="Student"/>
-                  <ul class="student-text">
-                    <li class="student">
-                      Учень Учньович
-                    </li>
-                    <li class="student-email">uchnivskaposhta@gmail.com</li>
-                  </ul>
-                </div>
-                <div class="block-student">
-                  <img class="student-photo"  src={studentOne} alt="Student"/>
-                  <ul class="student-text">
-                    <li class="student">
-                      Учень Учньович
-                    </li>
-                    <li class="student-email">uchnivskaposhta@gmail.com</li>
-                  </ul>
-                </div>
-                <div class="block-student">
-                  <img class="student-photo"  src={studentTwo} alt="Student"/>
-                  <ul class="student-text">
-                    <li class="student">
-                      Учень Учньович
-                    </li>
-                    <li class="student-email">uchnivskaposhta@gmail.com</li>
-                  </ul>
-                </div>
+              {Object.values(uniqueStudents).slice(0, 4).map((el, index) => (
+                  <div class="block-student">
+                      <img class="student-photo"  src={studentOne} alt="Student"/>
+                      <ul class="student-text">
+                        <li class="student">
+                          {el.firstName} {el.lastName}
+                        </li>
+                        <li class="student-email">{el.email}</li>
+                      </ul>
+                  </div>
+              ))}
               </div>
-              <div class="more-students-list">
-                {/* <details>
+              {(uniqueStudents.length > 4) && (
+                <div class="more-students-list">
+                <details>
                   <summary class="summary-btn">
-                  </summary> */}
-                  {/* <div class="block-student">
-                    <img class="student-photo" src={studentOne} alt="Student"/>
-                    <ul class="student-text">
-                      <li class="student">
-                        Учень Учньович
-                      </li>
-                      <li class="student-email">uchnivskaposhta@gmail.com</li>
-                    </ul>
-                  </div>
-                  <div class="block-student">
-                    <img class="student-photo" src={studentTwo} alt="Student"/>
-                    <ul class="student-text">
-                      <li class="student">
-                        Учень Учньович
-                      </li>
-                      <li class="student-email">uchnivskaposhta@gmail.com</li>
-                    </ul>
-                  </div>
-                  <div class="block-student">
-                    <img class="student-photo" src={studentOne} alt="Student"/>
-                    <ul class="student-text">
-                      <li class="student">
-                        Учень Учньович
-                      </li>
-                      <li class="student-email">uchnivskaposhta@gmail.com</li>
-                    </ul>
-                  </div> */}
-                {/* </details> */}
+                  </summary>
+                    {Object.values(uniqueStudents).slice(4).map((el, index) => (
+                      <div class="block-student">
+                            <img class="student-photo"  src={studentOne} alt="Student"/>
+                            <ul class="student-text">
+                              <li class="student">
+                                {el.firstName} {el.lastName}
+                              </li>
+                              <li class="student-email">{el.email}</li>
+                            </ul>
+                        </div>
+                    ))}
+                </details>
               </div>
+              )}
             </div>
           </div>
       </div>

@@ -42,7 +42,7 @@ const ViewNotes = () => {
              )}
             </div>
             <div className="icon-wrapper">
-              <Link to="#">
+              <Link to="/view-reminders">
               <div className="bell"></div>
               </Link>
             </div>

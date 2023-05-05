@@ -10,5 +10,4 @@ router.get('/:id', getStudent);
 router.post('/login', login)
 router.patch('/student/:userId', profileStudent);
 
-
 export default router;

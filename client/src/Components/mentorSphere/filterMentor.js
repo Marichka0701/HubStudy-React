@@ -35,7 +35,7 @@ const FilterMentor = ({name, description, qualification, mentorId}) => {
                   </div>
                   <div className="buttons-mentor-list">
                     <button onClick={() => navigate(`/about-study/${mentorId}`)} className="startStudying">Почати навчання</button>
-                    <button className="about">Детальніше</button>
+                    <button onClick={() => navigate(`/start-study/${mentorId}`)} className="about">Детальніше</button>
                   </div>
                 </div>
               </div>

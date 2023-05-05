@@ -141,7 +141,7 @@ const ProfileStudentRedo = () => {
           <div class="sectionTwoStudentProfile">
             <div className="myLessons-student">
                 <div className="myLessons-btn">Мої заняття</div>
-                <div className="block-lessons">
+                <div className="block-lessons-redo">
                   <div className="item-lessons">
                     <div className="photo-lesson">
                       <img src={swimming} ></img>

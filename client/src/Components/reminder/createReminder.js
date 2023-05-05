@@ -6,9 +6,10 @@ import notesIcon from "../../img/Нотатки (1).png";
 import person from "../../img/person.png"
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useSelector } from "react-redux";
+import iconMenu from "../../img/icon-menu.png";
 
 const initialValues = {
   recieverId: "",
@@ -21,7 +22,9 @@ const initialValues = {
 
 const CreateReminder = () => {
 
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
+  const status = useSelector((state) => state.status)
   const userId = user._id;
 
   const [formData, updateFormData] = useState(initialValues);
@@ -72,9 +75,21 @@ const CreateReminder = () => {
 <div className="createReminder-wrapper">
 
        <div className="left-side">
-        <img src={person}></img>
-        <img src={reminderIcon}></img>
-        <img src={notesIcon}></img>
+        <div className="avatar">
+            {status == "student" && (
+              <button className="button-avatar" onClick={() => navigate(`/profile-student/${userId}`)}>
+                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+             </button>
+             )}
+
+             {status == "mentor" && (
+              <button className="button-avatar" onClick={() => navigate(`/profile-mentor/${userId}`)}>
+                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+             </button>
+             )}
+        </div>
+        <Link to="/view-reminders"><img src={reminderIcon}></img></Link>
+        <Link to="/view-notes"><img src={notesIcon}></img></Link>
         <img src={chatIcon}></img>
       </div>
 
