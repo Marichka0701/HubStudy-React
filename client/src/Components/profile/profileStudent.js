@@ -112,10 +112,10 @@ const ProfileStudent = () => {
                   </div>
                 </Link>
                 <Link to="/view-notes">
-                  <button className="notes-profile">
+                  <div className="notes-profile">
                   <img width={30} src={notesIcon} ></img>
                     <p>Нотатки</p>
-                  </button>
+                  </div>
                 </Link>
                 <div className="chat-profile">
                 <img width={30} src={chatIcon} ></img>
@@ -162,7 +162,6 @@ const ProfileStudent = () => {
                         </div>
                       </div>
                     </div>
-
               </>
 
                   );
