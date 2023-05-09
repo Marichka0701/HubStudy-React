@@ -48,6 +48,8 @@ import CreateNotes from "./Components/notes/createNotes.js";
 import ViewReminder from "./Components/reminder/viewReminder.js";
 import CreateReminder from "./Components/reminder/createReminder.js";
 import StartStudy from "./Components/start-study/start.js";
+import Chat from "./Components/chat/chat.js";
+
 
 
 
@@ -79,6 +81,7 @@ function App() {
         <Route path="/view-reminders" element={<ViewReminder/>} />
         <Route path="/create-reminder" element={<CreateReminder/>} />
         <Route path="/start-study" element={<StartStudy/>} />
+        <Route path="/chat" element={<Chat/>} />
         
 
 

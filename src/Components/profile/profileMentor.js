@@ -78,12 +78,14 @@ const profileMentor = () => {
                   </Link>
                 </div>
               </div>
-              <div class="one-of-three-function">
-                <img class="chat-div" src={chatIcon} alt="bell ring"/>
-                <div class="func-text">
-                  Чат
+              <Link to="/chat">
+                <div class="one-of-three-function">
+                  <img class="chat-div" src={chatIcon} alt="bell ring"/>
+                  <div class="func-text">
+                    Чат
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
           <div class="about-me-container">
