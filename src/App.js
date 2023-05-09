@@ -45,6 +45,9 @@ import ProfileMentor from "./Components/profile/profileMentor.js";
 import ProfileMentorRedo from "./Components/profile/profileMentorRedo.js";
 import ViewNotes from "./Components/notes/viewNotes.js";
 import CreateNotes from "./Components/notes/createNotes.js";
+import AboutStudy from "./Components/startStudy/about.js";
+
+
 
 
 
@@ -73,11 +76,18 @@ function App() {
         <Route path="/profile-mentor-redo" element={<ProfileMentorRedo/>} />
         <Route path="/create-notes" element={<CreateNotes/>} />
         <Route path="/view-notes" element={<ViewNotes/>} />
+        <Route path="/about-study" element={<AboutStudy/>} />
+       
+
+
+
+
         
 
 
       </Routes>
     </BrowserRouter>
+    
   );
 }
 
