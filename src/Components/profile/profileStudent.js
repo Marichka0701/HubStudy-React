@@ -12,8 +12,22 @@ import swimming from "../../img/swimming.png";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
-const profileStudent = () => {
+
+
+  
+const ProfileStudent = () => {
+  const [smShow, setSmShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
+  const [lgnewShow, setnewLgShow] = useState(false);
+  
+  function handleButtonClick() {
+    setnewLgShow(true);
+    setLgShow(false);
+  }
+ 
   return (
     <div className="container-profileStudent">
       <Nav></Nav>
@@ -75,7 +89,8 @@ const profileStudent = () => {
             <div className="myLessons-student">
               <div className="myLessons-btn">Мої заняття</div>
               <div className="block-lessons">
-                <div className="item-lessons">
+                <div className="item-lessons" onClick={() => setLgShow(true)}
+>
                   <div className="photo-lesson">
                     <img src={swimming} ></img>
                   </div>
@@ -145,8 +160,129 @@ const profileStudent = () => {
           </div>
         </div>
       </div>
+     
+
+      <Button onClick={() => setLgShow(true)}></Button>
+
+<Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+       
+       <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+        <div className="content-modal-window">
+        <div className="mentor-section">
+            <div className="subtitle-mentor-section"> Ментор:</div>
+            <div className="just-text-in-mentor-section">
+              Менторіна Батьківна
+              </div>
+             </div>
+             <div className="mentor-section">
+            <div className="subtitle-course-section"> Назва курсу:</div>
+            <div className="just-text-in-mentor-section">
+              Підготовка до спортивних змагань
+              </div>
+             </div>
+             <div className="mentor-section">
+            <div className="subtitle-course-section"> Мій статус:</div>
+            <div id="status-active-studying"className="just-text-in-mentor-section">
+              Навчаюсь в цього ментора
+              </div>
+             <div className="mentor-section-about">
+                <div className="subtitle-course-section"> Про курс:</div>
+                <div id="description--about" className="just-text-in-mentor-section">
+                Якийсь опис, який мені слід розтягнути більш, ніж на 5 слів, щоб подивитись, як всьо тутоньки виглядає, дякую за розуміння.
+                  </div>
+             </div>
+             <div className="section-for-btns">
+             <button className="continue--studying-btn" onClick={() => setLgShow(false)}>
+              Продовжити навчання
+             </button>
+             <button className="end--studying-btn" onClick={handleButtonClick}> 
+              Завершити навчання
+             </button> 
+             </div>
+             </div>
+        </div>
+
+        </Modal.Body>
+        <Modal.Footer className="footer-style-modal"></Modal.Footer>
+      </Modal>
+
+
+      <Button onClick={() => setnewLgShow(true)}></Button>
+      <Modal
+        size="lg"
+        show={lgnewShow}
+        onHide={() => setnewLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+       
+       <Modal.Header closeButton >
+        </Modal.Header>
+        <Modal.Body>
+        {/* <div className="content-modal-window">
+        <div className="mentor-section">
+            <div className="subtitle-mentor-section"> Ментор:</div>
+            <div className="just-text-in-mentor-section">
+              Менторіна Батьківна
+              </div>
+             </div>
+             <div className="mentor-section">
+            <div className="subtitle-course-section"> Назва курсу:</div>
+            <div className="just-text-in-mentor-section">
+              Підготовка до спортивних змагань
+              </div>
+             </div>
+             <div className="mentor-section">
+            <div className="subtitle-course-section"> Мій статус:</div>
+            <div id="status-active-studying"className="just-text-in-mentor-section">
+              Навчаюсь в цього ментора
+              </div>
+             <div className="mentor-section-about">
+                <div className="subtitle-course-section"> Про курс:</div>
+                <div id="description--about" className="just-text-in-mentor-section">
+                Якийсь опис, який мені слід розтягнути більш, ніж на 5 слів, щоб подивитись, як всьо тутоньки виглядає, дякую за розуміння.
+                  </div>
+             </div>
+             <div className="section-for-btns">
+             <button className="continue--studying-btn" onClick={() => setLgShow(false)}>
+              Продовжити навчання
+             </button>
+             <button className="end--studying-btn" onClick={() => setnewLgShow(true)}> 
+              Завершити навчання
+             </button> 
+             </div>
+             </div>
+        </div> */}
+        <div className="new-modal-content">
+          <div className="new-modal-title">
+          Ви впевнені, що хочете покинути цей урок?
+          </div>
+          <div className="subtitle-new-modal">
+          Ви збираєтеся покинути урок Підготовка до спортивних змагань від ментора Менторіна Батьківна
+          </div>
+          <div className="new-buttons-section-modal">
+            <button className="new-modal-finish-study" >
+              Так, покинути
+            </button>
+            <button className="new-modal-continue-study" onClick={() => setnewLgShow(false)}>
+              Ні, продовжити навчання
+            </button>
+          </div>
+        </div>
+
+        </Modal.Body>
+        <Modal.Footer className="footer-style-modal"></Modal.Footer>
+      </Modal>
     </div>
+
+    
   );
 }
 
-export default profileStudent;
+export default ProfileStudent;

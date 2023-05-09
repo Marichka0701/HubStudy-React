@@ -77,7 +77,7 @@ function App() {
         <Route path="/create-notes" element={<CreateNotes/>} />
         <Route path="/view-notes" element={<ViewNotes/>} />
         <Route path="/about-study" element={<AboutStudy/>} />
-
+       
 
 
 
@@ -87,6 +87,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    
   );
 }
 
