@@ -1,7 +1,7 @@
 import Nav from "../main/Nav";
 import Form from 'react-bootstrap/Form';
 import "../../Styles/startStudy/startStudy.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
@@ -19,6 +19,7 @@ const initialValues = {
 const AboutStudy = () => {
   const [formData, updateFormData] = useState(initialValues);
   const { mentorId } = useParams();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const userId = user._id;
 
@@ -53,7 +54,7 @@ const AboutStudy = () => {
     });
     console.log(formData);
 
-
+    navigate(`/profile-student/${userId}`)
   }
 
   return (

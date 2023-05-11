@@ -34,6 +34,10 @@ const LessonSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    started:{
+        type: Boolean,
+        default: false
+    },
     sphere: {
         type: String
     }
