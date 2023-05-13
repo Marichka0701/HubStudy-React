@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const FilterMentor = ({name, description, qualification, mentorId}) => {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user);
-    const userId = user._id;
+
     return (
         <>
           <div className="mentor-item">
@@ -34,7 +34,8 @@ const FilterMentor = ({name, description, qualification, mentorId}) => {
                     <img src={mentorRating}></img>
                   </div>
                   <div className="buttons-mentor-list">
-                    <button onClick={() => navigate(`/about-study/${mentorId}`)} className="startStudying">Почати навчання</button>
+                    {user && <button onClick={() => navigate(`/about-study/${mentorId}`)} className="startStudying">Почати навчання</button>}
+                    {!user && <button onClick={() => navigate(`/sign-in`)} className="startStudying">Увійти</button>}
                     <button onClick={() => navigate(`/start-study/${mentorId}`)} className="about">Детальніше</button>
                   </div>
                 </div>

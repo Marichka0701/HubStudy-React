@@ -37,13 +37,13 @@ const FilterMentors = ({formData}) => {
 
     useEffect(() => {
         getMentors()
-    })
+    }, [])
 
 
 
     return (
         <>
-            {mentor.map(
+            {(mentor != null && mentor != undefined) && mentor.map(
                 ({
                     _id,
                     firstName,

@@ -211,6 +211,7 @@ p {
   border-radius: 16px;
   width: 379px;
   height: 523px;
+  cursor: pointer;
 }
 
 .about-lesson {
@@ -302,6 +303,7 @@ p {
 
   .item-lessons {
     background: rgb(255 219 193);
+
   }
 
   .block-tasks {
@@ -321,4 +323,193 @@ p {
   .contact-student {
     margin-left: 0;
   }
+
+}
+
+.btn-close {
+  border-radius: 1000px;
+  border: 3px solid gray;
+
+}
+
+.modal-header {
+  padding: 24px;
+}
+
+.modal-content {
+  background-color: white;
+  width: 860px;
+  height: 417px;
+  position: relative;
+  display: flex;
+  border-radius: 16px;
+
+
+}
+
+.modal-dialog {
+  position: relative;
+  flex-wrap: wrap;
+
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+  padding-bottom: 12px;
+}
+
+.modal-body {
+  padding: 0 36px 36px 36px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+ background-color: #fff;
+
+  border-radius: 16px;
+}
+
+
+.mentor-section, .mentor-section-about{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.mentor-section-about {
+  display: flex;
+  /* flex-wrap: wrap; */
+justify-content: space-between;
+  /* align-items: center; */
+  /* flex-direction: row; */
+  /* gap: 0px; */
+}
+
+#description--about{
+  margin-left: 0;
+  width: 526px;
+}
+.subtitle-mentor-section, .subtitle-course-section {
+  display:flex;
+  flex-direction: column;
+  font-weight: bold;
+  width: 156px;
+  margin-right: 40px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 990px) {
+  .subtitle-mentor-section, .subtitle-course-section{
+justify-content: space-between;
+  }
+}
+.just-text-in-mentor-section {
+  /* width: 200px; */
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+
+#status-active-studying{
+  color: #408018;
+}
+
+.section-for-btns {
+  display: flex;
+  flex-direction: row;
+  margin: 36px auto;
+  margin-bottom: 15px;
+}
+
+.continue--studying-btn {
+  margin-right: 24px;
+  background-color: #FFDF3A;
+  color:#000000;
+  padding: 12px 18px;
+  border-radius: 1000px;
+  font-size: 18px;
+}
+
+.continue--studying-btn:hover{
+  background-color: #FFEC89;
+  color: #323232;
+}
+
+.end--studying-btn {
+  background-color: white;
+  border-radius: 1000px;
+  border: 2px solid black;
+  padding: 12px 52px;
+  font-size: 18px;
+}
+
+.end--studying-btn:hover {
+  background-color: #FF4747;
+  color: white;
+}
+
+.mentor-section-about {
+  display: flex;
+  flex-direction: row;
+}
+
+.new-modal-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.new-modal-title {
+  display:flex;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 69px;
+  margin-bottom: 26px;
+}
+
+.subtitle-new-modal {
+
+  display: flex;
+  text-align: center;
+  color: #A7A7A7;
+}
+
+.new-buttons-section-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 60px;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.new-modal-finish-study {
+  width: 230px;
+  height: 45px;
+  background-color: #FF4747;
+  color: white;
+  padding: 12px 56px;
+  margin-right: 24px;
+  border-radius: 1000px;
+}
+
+.new-modal-finish-study:hover {
+  background-color: black;
+}
+
+.new-modal-continue-study {
+  width: 230px;
+  height: 45px;
+  background-color: #7FE53F;
+  padding: 12px 6px;
+  border-radius: 1000px;
+}
+
+.new-modal-continue-study:hover {
+background-color: black;
+color: white;
 }
