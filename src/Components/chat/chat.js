@@ -140,6 +140,7 @@ const chat = () => {
             </div>
             
             <div className="bottom-right-chat">
+              <textarea cols={100} rows={4} className="input-send"/>
               <button><img src={send}></img></button>
             </div>
           </div>
