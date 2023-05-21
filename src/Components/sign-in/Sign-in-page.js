@@ -60,7 +60,7 @@ const SignInPage = () => {
           </div>
 
           <div className="buttons1">
-            <Link to="/profile-mentor">
+            <Link to="/profile-student">
               <button type="submit" className="log-in">Увійти</button>
             </Link>
           </div>

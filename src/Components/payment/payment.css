@@ -1,0 +1,79 @@
+.page-payment {
+  background: #9A9FFF;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-payment h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 74px;
+  color: #000000;
+  padding-top: 136px;
+  margin-bottom: 10px;
+}
+
+.page-payment .block-inputs-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-payment .block-inputs-payment .input-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.page-payment .input-payment input {
+  width: 550px;
+  height: 55px;
+  background: #FFFFFF;
+  border-radius: 1000px;
+  padding: 14px 38px;
+}
+
+.page-payment .input-payment ::placeholder {
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #A7A7A7;
+}
+
+.page-payment .buttons-payment {
+  width: 550px;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-payment .buttons-payment .apple-pay {
+  background: #FFE146;
+  border-radius: 1000px;
+  width: 224px;
+  height: 52px;
+  font-size: 20px;
+}
+
+.page-payment .buttons-payment .g-pay {
+  background: #FFE146;
+  border-radius: 1000px;
+  width: 224px;
+  height: 52px;
+  font-size: 20px;
+
+}

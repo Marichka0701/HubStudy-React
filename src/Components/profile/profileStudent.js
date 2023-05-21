@@ -84,29 +84,31 @@ const ProfileStudent = () => {
             <div className="myLessons-student"> 
               <div className="myLessons-btn">Мої заняття</div> 
               <div className="block-lessons"> 
-                <div className="item-lessons" onClick={handleShow}> 
-                  <div className="photo-lesson"> 
-                    <img src={swimming} ></img> 
-                  </div> 
-                  <div className="about-lesson"> 
-                    <div> 
-                      <h2 className="title-lesson">Підготовка до спортивних змагань:</h2> 
-                    </div> 
-                    <div> 
-                      <p className="description-lesson">Змагання на носі, а ви не знаєте як до них підготуватись?</p> 
-                    </div> 
-                    <div className="durationPrice"> 
-                      <div> 
-                        <p>Ціна заняття:</p> 
-                        <p>350 грн</p> 
-                      </div> 
-                      <div> 
-                        <p>Тривалість заняття:</p> 
-                        <p>1,5 год</p> 
-                      </div> 
-                    </div> 
-                  </div> 
-                </div> 
+                <Link to="/payment">
+                  <div className="item-lessons" onClick={handleShow}>
+                    <div className="photo-lesson">
+                      <img src={swimming} ></img>
+                    </div>
+                    <div className="about-lesson">
+                      <div>
+                        <h2 className="title-lesson">Підготовка до спортивних змагань:</h2>
+                      </div>
+                      <div>
+                        <p className="description-lesson">Змагання на носі, а ви не знаєте як до них підготуватись?</p>
+                      </div>
+                      <div className="durationPrice">
+                        <div>
+                          <p>Ціна заняття:</p>
+                          <p>350 грн</p>
+                        </div>
+                        <div>
+                          <p>Тривалість заняття:</p>
+                          <p>1,5 год</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
                 <div className="item-lessons"> 
                   <div className="photo-lesson"> 
                     <img src={swimming} ></img></div> 
