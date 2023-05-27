@@ -5,6 +5,10 @@ import Mentor from "../models/Mentor.js";
 export const createNewNoteStudent = async(req, res) => {
     try {
         const { userId, text } = req.body;
+        if(!text)
+        {
+          return res.status(409).json({ message: err.message });
+        }
         const user = await Student.findById(userId);
         const newNote = new Notes({
           userId,
@@ -34,7 +38,7 @@ export const createNewNoteMentor = async(req, res) => {
       const note = await newNote.save();
 
 
-      res.status(201).json(note);
+      res.status(200).json(note);
     } catch (err) {
       res.status(409).json({ message: err.message });
     }

@@ -63,6 +63,8 @@ const CreateReminder = () => {
       console.log(error);
     });
     console.log(formData);
+
+    navigate('/view-reminders')
   };
 
 

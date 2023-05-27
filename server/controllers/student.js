@@ -71,7 +71,7 @@ export const getStudent = async (req, res) => {
 export const profileStudent = async (req, res) => {
     try {
       const {
-        firstName,
+            firstName,
             lastName,
             email,
       } = req.body;
@@ -79,7 +79,7 @@ export const profileStudent = async (req, res) => {
       const userId = req.params.userId;
 
       const updatedUser = await Student.findByIdAndUpdate(userId, {
-        firstName,
+            firstName,
             lastName,
             email,
       }, { new: true });

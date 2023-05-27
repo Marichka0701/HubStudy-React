@@ -22,6 +22,7 @@ const AboutStudy = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const userId = user._id;
+  const status = useSelector((state) => state.status)
 
   formData.mentor = mentorId;
   formData.student = userId;
@@ -54,7 +55,15 @@ const AboutStudy = () => {
     });
     console.log(formData);
 
-    navigate(`/profile-student/${userId}`)
+    if (status == "student")
+    {
+      navigate(`/profile-student/${userId}`)
+    }
+
+    if (status == "mentor")
+    {
+      navigate(`/profile-mentor/${userId}`)
+    }
   }
 
   return (
