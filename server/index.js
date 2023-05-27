@@ -29,7 +29,7 @@ import { blog } from "./data/index.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
-const app = express();
+export const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -86,24 +86,3 @@ mongoose
   })
   .catch((error) => console.log(`${error} did not connect`));
 
-// const server = http.createServer(app);
-// const io = new Server(server, {
-//   cors: {
-//     origin: "http://localhost:3000"
-//   }
-// });
-// io.on('connection', (socket) => {
-//   socket.emit('messageFromServer', { data: 'Welcome to the socketio server' });
-
-//   socket.on('messageToServer', (dataFromClient) => {
-//     console.log(dataFromClient);
-//   });
-
-//   socket.on('newMessageToServer', (msg) => {
-//     io.emit('messageToClients', { text: msg.text });
-//   });
-// });
-
-// server.listen(9000, () => {
-//   console.log('Server is listening on port 9000');
-// });

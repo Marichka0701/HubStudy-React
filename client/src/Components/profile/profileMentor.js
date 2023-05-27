@@ -13,6 +13,7 @@ import "../../Styles/profile/dycalendar.css";
 // import dycalendar from  "../../Components/profile/dyCalendar.js";
 import Nav from "../../Components/main/Nav";
 import { setMentor } from "../../state";
+import { setLessons } from "../../state";
 
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -31,9 +32,34 @@ const initialValues = {
   email: ""
 }
 
+const initialValuesLessons = {
+  firstName: "",
+  lastName: "",
+  sphere: ""
+}
+
+const initialValuesMentor = {
+  firstName: "",
+  lastName: ""
+}
+
+
 const ProfileMentor = () => {
 
+  const [smShow, setSmShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
+  const [lgnewShow, setnewLgShow] = useState(false);
+
+  function handleButtonClick() {
+    setnewLgShow(true);
+    setLgShow(false);
+  }
+
   const [user, setUser] = useState(initialValues);
+  const [mentors, setMentors] = useState(initialValuesMentor)
+  const [selectedLesson, setSelectedLesson] = useState(initialValuesLessons);
+  const [selectedLessonID, setSelectedLessonID] = useState(null);
+  const lesson = useSelector((state) => state.lesson)
   const { userId } = useParams();
   const dispatch = useDispatch();
   const getUser = async () => {
@@ -51,6 +77,33 @@ const ProfileMentor = () => {
     .catch(function (error) {
       console.log(error);
     });
+
+    const lessonsResponse = await axios.get(`http://localhost:3001/lesson?student=${userId}`)
+    .then(function (response) {
+      const data = response.data;
+      dispatch(
+        setLessons({
+          lesson: data
+        })
+      )
+      console.log(lesson)
+    })
+  }
+
+  const getSingleLesson = async (id) => {
+    const lessonsResponse = axios.get(`http://localhost:3001/lesson?_id=${id}`)
+    .then(function (response) {
+      const data = response.data;
+      const mentor = axios.get(`http://localhost:3001/mentor/${data[0].mentor._id}`)
+      .then(function (mentorResponse) {
+        const mentorData = mentorResponse.data
+        setMentor(mentorData)
+      })
+      setSelectedLesson(data[0]);
+    })
+    setSelectedLessonID(id);
+
+
   }
 
   useEffect(() => {
@@ -338,6 +391,7 @@ const ProfileMentor = () => {
                 }
               </script>
             </div> */}
+
             <div className='calendar'>
 <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDateTimePicker orientation="landscape" />
