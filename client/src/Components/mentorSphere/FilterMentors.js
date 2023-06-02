@@ -7,22 +7,21 @@ import FilterMentor from "./filterMentor.js";
 const FilterMentors = ({formData}) => {
     const dispatch = useDispatch();
     const mentor = useSelector((state) => state.mentor);
-
-
-    const getMentors = async () => {
+    let filter = "";
+    const { minPrice, maxPrice, minQualify, maxQualify, groupLessons, qualification } = formData;
+    if (minPrice != "")
+        filter += `pricePerLesson[gt]=${minPrice}&`;
+    if (maxPrice != "")
+        filter += `pricePerLesson[lt]=${maxPrice}&`;
+    if (minQualify != "")
+        filter += `yearOfExpierience[gt]=${minQualify}&`;
+    if (maxQualify != "")
+        filter += `yearOfExpierience[lt]=${maxQualify}&`;
+    if (groupLessons !== "")
+        filter += `groupLessons=true&`
+        const getMentors = async () => {
         try {
-        const { minPrice, maxPrice, minQualify, maxQualify, groupLessons, qualification } = formData;
-        let filter = "";
-        if (minPrice != "")
-            filter += `pricePerLesson[gt]=${minPrice}&`;
-        if (maxPrice != "")
-            filter += `pricePerLesson[lt]=${maxPrice}&`;
-        if (minQualify != "")
-            filter += `yearOfExpierience[gt]=${minQualify}&`;
-        if (maxQualify != "")
-            filter += `yearOfExpierience[lt]=${maxQualify}&`;
-        if (groupLessons !== "")
-            filter += `groupLessons=true&`
+       
         const response = await fetch(`http://localhost:3001/mentor?${filter}`, {
             method: 'GET',
         });
@@ -37,9 +36,9 @@ const FilterMentors = ({formData}) => {
 
     useEffect(() => {
         getMentors()
-    }, [])
+    }, [filter])
 
-
+    //getMentors()
 
     return (
         <>

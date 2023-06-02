@@ -14,12 +14,17 @@ const initialValues = {
   minQualify: "",
   maxQualify: "",
   groupLessons: "",
+  alone: "",
   qualification: "",
 }
 
 const Mentor = () => {
 
   const [formData, updateFormData] = useState(initialValues);
+
+  const handleClicK = (e) => {
+
+  }
 
   const handleChange = (e) => {
     updateFormData({
@@ -67,11 +72,11 @@ const Mentor = () => {
               <p className="group-title">Формат занять</p>
               <div className="group-input">
                 <div className="group-item">
-                  <input className="group-input" type="checkbox" onChange={handleChange} id="groupLessons" name="groupLessons" value="true" />
+                  <input className="group-input" type="checkbox" onClick={handleChange} id="groupLessons" name="groupLessons" value="true" />
                   <label className="group-label" for="">Групові</label>
                 </div>
                 <div className="group-item">
-                  <input className="group-input" type="checkbox" id="" name="" value="" />
+                  <input className="group-input" type="checkbox" onClick={handleChange} id="" name="alone" value="true" />
                   <label className="group-label" for="">Індивідуальні</label>
                 </div>
               </div>
