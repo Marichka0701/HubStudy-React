@@ -22,7 +22,7 @@ export const createNewLesson = async(req, res) => {
         });
 
         const lesson = await newLesson.save();
-        res.status(201).json(lesson);
+        res.status(201).json({lesson});
     } catch (err) {
         res.status(409).json({error: err.message});
     }
@@ -47,7 +47,7 @@ export const getLessons = async (req, res) => {
         query = Lesson.find(JSON.parse(queryStr)).populate('mentor');
 
         const lessons = await query;
-        res.status(200).json(lessons);
+        res.status(200).json({data: lessons});
 
 
     } catch (error) {

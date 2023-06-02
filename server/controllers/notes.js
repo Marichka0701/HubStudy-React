@@ -38,7 +38,7 @@ export const createNewNoteMentor = async(req, res) => {
       const note = await newNote.save();
 
 
-      res.status(200).json(note);
+      res.status(201).json(note);
     } catch (err) {
       res.status(409).json({ message: err.message });
     }

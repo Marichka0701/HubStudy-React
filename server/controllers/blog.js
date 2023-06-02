@@ -25,5 +25,5 @@ export const getBlogByMentorId = async (req, res) => {
 export const createBlog = async (req, res, next) => {
     const blog = await Blog.create(req.body);
 
-    res.status(201).json(blog);
+    res.status(201).json({blog});
 }
