@@ -115,6 +115,8 @@ const ProfileStudent = () => {
     getUser();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  getUser()
+
   const {
     firstName,
     lastName,
@@ -150,7 +152,7 @@ const ProfileStudent = () => {
       <div class="main-profileStudent">
         <div className="sidebar">
           <div className="photoStudent">
-            <img className="photoStudent-photo" width={300} src={`http://localhost:3001/assets/${picturePath}`}></img>
+            <img className="photoStudent-photo" width={300} src={`http://localhost:3001/assets/${picturePath}`} ></img>
             {/* <img className="photoStudent-photo" width={300} src={photoStudent} ></img> */}
 
           </div>
