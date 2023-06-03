@@ -26,7 +26,7 @@ const CreateReminder = () => {
   const user = useSelector((state) => state.user);
   const status = useSelector((state) => state.status)
   const userId = user._id;
-
+  const picturePath = user.picturePath
   const [formData, updateFormData] = useState(initialValues);
 
   const handleChange = (e) => {
@@ -80,13 +80,13 @@ const CreateReminder = () => {
         <div className="avatar">
             {status == "student" && (
               <button className="button-avatar" onClick={() => navigate(`/profile-student/${userId}`)}>
-                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+                <img className="avatar-icon" width={300} src={`http://localhost:3001/assets/${picturePath}`} ></img>
              </button>
              )}
 
              {status == "mentor" && (
               <button className="button-avatar" onClick={() => navigate(`/profile-mentor/${userId}`)}>
-                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+                <img className="avatar-icon" width={300} src={`http://localhost:3001/assets/${picturePath}`} ></img>
              </button>
              )}
         </div>

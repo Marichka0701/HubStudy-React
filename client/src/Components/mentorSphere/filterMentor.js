@@ -4,7 +4,7 @@ import mentorRating from "../../img/Stars_rate.png";
 import { useSelector } from "react-redux";
 
 
-const FilterMentor = ({name, description, qualification, mentorId}) => {
+const FilterMentor = ({name, description, qualification, mentorId, picturePath, price}) => {
     const navigate = useNavigate();
     const user = useSelector((state) => state.user);
     const status = useSelector((state) => state.status);
@@ -13,7 +13,7 @@ const FilterMentor = ({name, description, qualification, mentorId}) => {
         <>
           <div className="mentor-item">
                 <div className="mentor-photo">
-                  <img src={mentorPhoto}></img>
+                  <img className="mentor-photo-img" src={`http://localhost:3001/assets/${picturePath}`}></img>
                 </div>
                 <div className="mentor-info">
                   <div className="mentor-description">
@@ -33,6 +33,9 @@ const FilterMentor = ({name, description, qualification, mentorId}) => {
                   </div>
                   <div className="rating-mentor">
                     <img src={mentorRating}></img>
+                  </div>
+                  <div className="price-mentor">
+                    <p className="price">{`${price}грн / заняття`}</p>
                   </div>
                   <div className="buttons-mentor-list">
                     {(user && status == "mentor") && <button className="startStudying">Почати навчання</button>}

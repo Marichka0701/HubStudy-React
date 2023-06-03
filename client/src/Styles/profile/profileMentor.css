@@ -25,6 +25,8 @@ flex-basis: 0;
 flex-wrap: wrap;
 }
 
+
+
 .wrapper-profileMentor .upper-section {
   padding: 16px;
   margin: 0;
@@ -124,6 +126,7 @@ flex-wrap: wrap;
   display: flex;
   margin: auto;
   width: 98%;
+  max-width: 313px;
 }
 
 .wrapper-profileMentor .left-and-right {

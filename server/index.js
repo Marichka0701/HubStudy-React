@@ -21,6 +21,7 @@ import lessonRoutes from "./routes/lesson.js"
 import UserQuestion from "./models/Userquestion.js";
 import Mentor from "./models/Mentor.js";
 import Blog from "./models/Blog.js";
+import WebSockets from "./utils/WebSockets.js";
 
 import { mentor } from "./data/index.js";
 import { review } from "./data/index.js";
@@ -55,8 +56,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-
-
 app.post("/student/register", upload.single('picturePath'), createNewUser)
 app.post("/student/photo", upload.single('picturePath'),(req, res) => {
   // Файл успішно завантажений, можна виконати додаткові дії
@@ -71,6 +70,14 @@ app.use('/note', noteRoutes);
 app.use('/notification', notificationRoutes);
 app.use('/lesson', lessonRoutes);
 
+const server = http.createServer(app);
+global.io = new Server(server);
+global.io.on('connection', WebSockets.connection);
+server.listen(process.env.PORT);
+server.on("listening", () => {
+  console.log(`Listening on port: ${PORT}`)
+});
+
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
 mongoose
@@ -79,7 +86,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    //app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     //Mentor.insertMany(mentor);
    //Review.insertMany(review);
    //Blog.insertMany(blog);

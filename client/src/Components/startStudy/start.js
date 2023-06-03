@@ -58,7 +58,7 @@ const StartStudy = () => {
       getUser();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    getUser();
+    //getUser();
     const {
       firstName,
       lastName,
@@ -70,7 +70,8 @@ const StartStudy = () => {
       groupLessons,
       qualification,
       availableOnline,
-      description
+      description,
+      picturePath
     } = user;
 
   return (
@@ -97,7 +98,7 @@ const StartStudy = () => {
       <div class="left-and-right">
         <div class="left-section">
           <div class="photo-container">
-              <img class="photo-avatar" src={photoMentor} alt="Mentor photo"/>
+              <img class="photo-avatar" src={`http://localhost:3001/assets/${picturePath}`} alt="Mentor photo"/>
           </div>
           <div class="functions-container">
             <div class="functions-title">

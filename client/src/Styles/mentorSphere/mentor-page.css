@@ -74,6 +74,12 @@
   font-size: 20px;
 }
 
+.mentor-photo-img {
+  width: 300px;
+  height: 440px;
+  border-radius: 10px 0px 0px 10px;
+}
+
 .input-min, .input-max {
   width: 70px;
   border-radius: 10px;
@@ -222,26 +228,20 @@
   margin: 0px;
 }
 
+.rating-mentor {
+  padding-top: 5px;
+}
+
 .mentor-cons-list {
   display: flex;
   flex-direction: column;
-  margin: 38px 0px;
+  margin: 28px 0px;
+  padding-left: 0;
 }
 
 .mentor-cons-list li {
   position: relative;
-  padding: 5px 15px;
-}
-
-.mentor-cons-list li::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #6D6D6D;
-  bottom: 13px;
-  left: 0px;
-  position: absolute;
+  list-style-type: none; 
 }
 
 .mentor-cons-item {
@@ -250,8 +250,12 @@
   color: #6D6D6D
 }
 
+.price-mentor {
+  padding-top: 58px;
+}
+
 .buttons-mentor-list {
-  margin-top: 48px;
+  margin-top: 55px;
 }
 
 .footer-mentor {

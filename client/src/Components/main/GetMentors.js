@@ -33,13 +33,17 @@ const GetMentors = () => {
       <Carousel>
           {mentor && mentor.map(
               ({
+                  _id,
                   firstName,
                   lastName,
-                  description
+                  description,
+                  picturePath
               }) => (
                       <Carousel.Item>
-                          <GetMentor name={`${firstName} ${lastName}`}
-                                      description={description}/>
+                          <GetMentor mentorId = {_id} 
+                                     name={`${firstName} ${lastName}`}
+                                     description={description}
+                                     picturePath={picturePath}/>
                       </Carousel.Item>
               )
           )}

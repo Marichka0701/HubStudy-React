@@ -21,6 +21,12 @@
   font-size: 18px;
 }
 
+.profilePic-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
 .bg-light {
   margin: 16px 18px 0px 14px;
   padding: 0px 56px 0px 73px;

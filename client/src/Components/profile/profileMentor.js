@@ -115,7 +115,8 @@ const ProfileMentor = () => {
     firstName,
     lastName,
     email,
-    student
+    student,
+    picturePath
   } = user;
 
   const mentor = useSelector((state) => state.user);
@@ -164,7 +165,7 @@ const ProfileMentor = () => {
       <div class="left-and-right">
         <div class="left-section">
           <div class="photo-container">
-              <img class="photo-avatar" src={photoMentor} alt="Mentor photo"/>
+              <img class="photo-avatar" src={`http://localhost:3001/assets/${picturePath}`} alt="Mentor photo"/>
           </div>
           <div class="functions-container">
             <div class="functions-title">

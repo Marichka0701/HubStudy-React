@@ -8,7 +8,7 @@ const FilterMentors = ({formData}) => {
     const dispatch = useDispatch();
     const mentor = useSelector((state) => state.mentor);
     let filter = "";
-    const { minPrice, maxPrice, minQualify, maxQualify, groupLessons, qualification } = formData;
+    const { minPrice, maxPrice, minQualify, maxQualify, groupLessons, qualification, } = formData;
     if (minPrice != "")
         filter += `pricePerLesson[gt]=${minPrice}&`;
     if (maxPrice != "")
@@ -19,6 +19,8 @@ const FilterMentors = ({formData}) => {
         filter += `yearOfExpierience[lt]=${maxQualify}&`;
     if (groupLessons !== "")
         filter += `groupLessons=true&`
+    if (qualification != "")
+        filter += `qualification=${qualification}&`
         const getMentors = async () => {
         try {
        
@@ -48,12 +50,16 @@ const FilterMentors = ({formData}) => {
                     firstName,
                     lastName,
                     description,
-                    qualification
+                    qualification,
+                    picturePath,
+                    pricePerLesson
                 }) => (
 
                             <FilterMentor mentorId={_id} name={`${firstName} ${lastName}`}
                                         description={description}
-                                        qualification={qualification}/>
+                                        qualification={qualification}
+                                        picturePath={picturePath}
+                                        price={pricePerLesson}/>
                 )
             )}
         </>

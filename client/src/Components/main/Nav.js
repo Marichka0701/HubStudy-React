@@ -23,7 +23,7 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   let isLoggedIn = false;
-  let userId;
+  let userId, picturePath;
   const user = useSelector((state) => state.user);
   const status = useSelector((state) => state.status)
 
@@ -31,6 +31,7 @@ function App() {
   {
     isLoggedIn = true
     userId = user._id
+    picturePath = user.picturePath
   }
 
   return (
@@ -102,12 +103,12 @@ function App() {
                   <>
                       {status == "student" && (
                         <button onClick={() => navigate(`/profile-student/${userId}`)} className='profilePic'>
-                          <img className='profilePic-img' width={60} src={profilePicHeader} />
+                          <img className='profilePic-img' width={60} src={`http://localhost:3001/assets/${picturePath}`} />
                         </button>
                       )}
                       {status == "mentor" && (
                         <button onClick={() => navigate(`/profile-mentor/${userId}`)} className='profilePic'>
-                          <img className='profilePic-img' width={60} src={profilePicHeader} />
+                          <img className='profilePic-img' width={60} src={`http://localhost:3001/assets/${picturePath}`} />
                         </button>
                       )}
                     <button className='logout' onClick={() => dispatch(setLogout()) && navigate('/')}>Вийти</button>

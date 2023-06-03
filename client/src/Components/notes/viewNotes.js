@@ -20,7 +20,7 @@ const ViewNotes = () => {
   const status = useSelector((state) => state.status)
   const note = useSelector((state) => state.note);
   const userId = user._id;
-
+  const picturePath = user.picturePath
 
   return (
     <div className="page">
@@ -31,13 +31,13 @@ const ViewNotes = () => {
             <div className="avatar">
              {status == "student" && (
               <button className="button-avatar" onClick={() => navigate(`/profile-student/${userId}`)}>
-                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+                <img className="avatar-icon" width={300} src={`http://localhost:3001/assets/${picturePath}`} ></img>
              </button>
              )}
 
              {status == "mentor" && (
               <button className="button-avatar" onClick={() => navigate(`/profile-mentor/${userId}`)}>
-                <img className="avatar-icon" src={iconMenu} alt="icon menu"></img>
+                <img className="avatar-icon" width={300} src={`http://localhost:3001/assets/${picturePath}`} ></img>
              </button>
              )}
             </div>

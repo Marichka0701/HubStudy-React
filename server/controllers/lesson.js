@@ -47,7 +47,7 @@ export const getLessons = async (req, res) => {
         query = Lesson.find(JSON.parse(queryStr)).populate('mentor');
 
         const lessons = await query;
-        res.status(200).json({data: lessons});
+        res.status(200).json(lessons);
 
 
     } catch (error) {
