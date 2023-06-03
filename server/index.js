@@ -55,8 +55,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-
-
 app.post("/student/register", upload.single('picturePath'), createNewUser)
 app.post("/student/photo", upload.single('picturePath'),(req, res) => {
   // Файл успішно завантажений, можна виконати додаткові дії

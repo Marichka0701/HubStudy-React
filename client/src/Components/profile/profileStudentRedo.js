@@ -73,7 +73,8 @@ const ProfileStudentRedo = () => {
   const {
     firstName,
     lastName,
-    email
+    email,
+    picturePath
   } = user;
 
   console.log(userId);
@@ -105,7 +106,7 @@ const ProfileStudentRedo = () => {
       <div class="main-profileStudent">
         <div className="sidebar">
           <div className="photoStudent">
-            <img className="photoStudent-photo" width={300} src={photoStudent} ></img>
+          <img className="photoStudent-photo" width={300} src={`http://localhost:3001/assets/${picturePath}`}></img>
           </div>
         </div>
         <div className="mainProfileStudentRedo">

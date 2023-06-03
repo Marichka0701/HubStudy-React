@@ -12,6 +12,14 @@ p {
   color: #9a9fff;
 }
 
+.photoStudent-photo {
+  border-radius: 1000px;
+  display: flex;
+  margin: auto;
+  width: 98%;
+  max-width: 313px;
+}
+
 .under-header {
   position: fixed;
   width: 100%;

@@ -150,8 +150,8 @@ const ProfileStudent = () => {
       <div class="main-profileStudent">
         <div className="sidebar">
           <div className="photoStudent">
-            {/* <img className="photoStudent-photo" width={300} src={`http://localhost:3001/assets/${picturePath}`} ></img> */}
-            <img className="photoStudent-photo" width={300} src={photoStudent} ></img>
+            <img className="photoStudent-photo" width={300} src={`http://localhost:3001/assets/${picturePath}`}></img>
+            {/* <img className="photoStudent-photo" width={300} src={photoStudent} ></img> */}
 
           </div>
           <div className="content-sidebar">

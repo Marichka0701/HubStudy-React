@@ -65,6 +65,14 @@
   align-items: center;
 }
 
+.container-profileStudentRedo .photo-avatar{
+  border-radius: 1000px;
+  display: flex;
+  margin: auto;
+  width: 98%;
+  max-width: 313px;
+}
+
 @media screen and (max-width: 420px) {
   .container-profileStudentRedo .about {
     background-color: rgb(255 219 193);

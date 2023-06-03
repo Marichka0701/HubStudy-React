@@ -87,10 +87,10 @@ const Mentor = () => {
                 <label for='selection-form'></label>
                 <Form.Select id='qualification' name='qualification' onChange={handleChange} className='selection-form' aria-label="Default select example">
                   <option disabled>Оберіть сферу</option>
-                  <option value="1">Уроки вокалу</option>
+                  <option value="Fullstack">Fullstack</option>
                   <option selected value="2">Плавання</option>
-                  <option value="3">ІТ-сфера</option>
-                  <option value="4">ІТ-сфера</option>
+                  <option value="President">President</option>
+                  <option value="Backend">Backend</option>
                   <option value="5">ІТ-сфера</option>
                   <option value="6">ІТ-сфера</option>
                   <option value="7">ІТ-сфера</option>

@@ -13,6 +13,11 @@
   border-radius: 1000px;
 }
 
+.photo-avatar {
+  height: 320px;
+  border-radius: 30%;
+}
+
 .wrapper-start-study .name-and-surname {
   display: flex;
   flex-direction: row;

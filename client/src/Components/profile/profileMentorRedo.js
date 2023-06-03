@@ -22,6 +22,7 @@ import Form from 'react-bootstrap/Form';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
+import { useSelector } from "react-redux";
 
 
 // import * as React from 'react';
@@ -47,7 +48,10 @@ import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
 
 
 
-const profileMentorRedo = () => {
+const ProfileMentorRedo = () => {
+  const user = useSelector((state) => state.user);
+  const picturePath = user.picturePath
+
   return (
     <div className="container-profileStudentRedo">
       <Nav></Nav>
@@ -75,7 +79,7 @@ const profileMentorRedo = () => {
       <div class="main-profileStudent">
         <div className="sidebar">
           <div className="photoStudent">
-            <img className="photoStudent-photo" width={300} src={photoStudent} ></img>
+          <img class="photo-avatar" src={`http://localhost:3001/assets/${picturePath}`} alt="Mentor photo"/>
           </div>
         </div>
         <div className="mainProfileStudentRedo">
@@ -331,4 +335,4 @@ dfkhk fghfhg urtoe ;"></input> */}
    );
 }
 
-export default profileMentorRedo;
+export default ProfileMentorRedo;
