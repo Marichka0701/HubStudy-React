@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
-
-const Notification = () => {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    const socket = io('http://localhost:3002');
-
-    socket.on('notification', (message) => {
-      setMessage(message);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
-
+export function TextWithLimit({ text, limit }) {
   return (
     <div>
-      {message && <div>{message}</div>}
+      {text.length <= limit ? (
+        <span>{text}</span>
+      ) : (
+        <span id="that_text">
+          {text.slice(0, limit)}&hellip;
+        </span>
+      )}
     </div>
   );
-};
-
-export default Notification;
+}

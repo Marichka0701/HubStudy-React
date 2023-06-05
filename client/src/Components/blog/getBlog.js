@@ -2,7 +2,7 @@ import rates from '../../img/Stars_rate.png';
 import sectionThree from '../../img/section-3.png';
 import mentorPhoto from "../../img/mentor-photo.png";
 
-function TextWithLimit({ text, limit }) {
+export function TextWithLimit({ text, limit }) {
     return (
       <div>
         {text.length <= limit ? (
