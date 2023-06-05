@@ -66,22 +66,34 @@ function App() {
                     title="Обрати напрям"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action1">Action</NavDropdown.Item>
+                    <NavDropdown.Item href="#action1">Лідерство та комунікація</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action2">
-                      Another action
+                    Дизайн UX/UI
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action3">
-                      Another action
+                    Бізнес та менеджмент
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                      Another action
+                    Право
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action5">
-                      Another action
+                      Дикція та ораторське мистецтво
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action6">
-                      Something else here
+                      Фінансова грамотність
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action7">
+                      Плавання
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action8">
+                      Стрільба
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action9">
+                      Психологія
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action10">
+                      SMM
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Link to="/blog" >

@@ -1,10 +1,8 @@
 import '../../Styles/main/reviews.css';
 import reviewItemOne from '../../img/reviews-1.png';
-import { useSelector } from 'react-redux';
+
 const Reviews = () => {
-  const token = useSelector((state) => state.token);
-  console.log(token);
-  return (
+  return ( 
     <div className='reviews'>
     <h2 className='title-reviews'>
       <span className='black-reviews'>Re</span>views
@@ -21,7 +19,7 @@ const Reviews = () => {
             </h3>
           </div>
           <div className='description-review'>
-            <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+            <p>"Зручна у використанні платформа, швидко знайшов наставника. Дякую!"</p>
           </div>
         </div>
       </div>
@@ -32,11 +30,11 @@ const Reviews = () => {
         <div className='text-review'>
           <div className='log-review'>
             <h3 className='log-review-item'>
-            Andrew
+            Stepan
             </h3>
           </div>
           <div className='description-review'>
-            <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+            <p>"Наставник, з яким я працював, був дуже терплячий та знаючий. Я рекомендую цей сайт всім, хто шукає якісну допомогу в навчанні."</p>
           </div>
         </div>
       </div>
@@ -47,11 +45,11 @@ const Reviews = () => {
         <div className='text-review'>
           <div className='log-review'>
             <h3 className='log-review-item'>
-            Andrew
+            Karina
             </h3>
           </div>
           <div className='description-review'>
-            <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+            <p>"Заняття проходять дуже продуктивно, і я відчуваю, що роблю значний прогрес."</p>
           </div>
         </div>
       </div>
@@ -62,11 +60,11 @@ const Reviews = () => {
         <div className='text-review'>
           <div className='log-review'>
             <h3 className='log-review-item'>
-            Andrew
+            Мирослава
             </h3>
           </div>
           <div className='description-review'>
-            <p>Зручна у використанні платформа, швидко знайшов наставника. Дякую!</p>
+            <p>"Я дуже задоволений заняттями з наставником на цьому сайті! Вона дуже професійна, мої знання зросли у декілька раз"</p>
           </div>
         </div>
       </div>
@@ -74,5 +72,5 @@ const Reviews = () => {
   </div>
    );
 }
-
+ 
 export default Reviews;
